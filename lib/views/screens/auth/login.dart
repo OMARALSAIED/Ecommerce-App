@@ -1,5 +1,7 @@
+
 import 'package:ecommerce/core/constant/colors.dart';
 import 'package:ecommerce/core/constant/styles.dart';
+import 'package:ecommerce/views/widgets/auth/Login/custom_button.dart';
 import 'package:ecommerce/views/widgets/auth/Login/logo_auth.dart';
 import 'package:ecommerce/views/widgets/auth/Login/text_form_app.dart';
 import 'package:flutter/material.dart';
@@ -23,10 +25,7 @@ class Login extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
             child: ListView(
               children: [
-                LogoAuth(),
-                const SizedBox(
-                  height: 20,
-                ),
+                const LogoAuth(),
                 const Text(
                   'Welcome Back',
                   textAlign: TextAlign.center,
@@ -44,12 +43,12 @@ class Login extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 75,
+                  height: 20,
                 ),
                 AppTextFormField(
                   hinttext: 'Email',
                   validator: (val) {},
-                  suffixIcon: Icon(Icons.email),
+                  suffixIcon: const Icon(Icons.email),
                 ),
                 const SizedBox(
                   height: 20,
@@ -58,6 +57,30 @@ class Login extends StatelessWidget {
                   hinttext: 'password',
                   validator: (val) {},
                   suffixIcon: const Icon(Icons.lock_outline),
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                const Text(
+                  'Foget Password',
+                  textAlign: TextAlign.end,
+                ),
+                CustomButtonAuth(text: 'sign in', onPressed: () {}),
+                SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Don 't have an account ? "),
+                    InkWell(
+                      child: Text(
+                        'Sign Up',
+                        style: Styles.textstyle15
+                            .copyWith(color: APPColors.primaryColor),
+                      ),
+                    )
+                  ],
                 )
               ],
             )));
