@@ -1,6 +1,8 @@
-import 'package:ecommerce/core/services/sservices.dart';
+import 'package:ecommerce/core/localization/translation.dart';
+import 'package:ecommerce/core/services/services.dart';
 import 'package:ecommerce/routes.dart';
-import 'package:ecommerce/views/screens/onboarding.dart';
+import 'package:ecommerce/views/screens/language.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,12 +20,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      translations: MyTranslation(),
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         textTheme: GoogleFonts.playfairDisplayTextTheme(),
       ),
-      home: const OnBoarding(),
+      home: const Language(),
       routes: routes,
     );
   }

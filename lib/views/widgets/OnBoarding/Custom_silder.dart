@@ -34,7 +34,7 @@ class CustomSilder extends GetView<OnBoardingControllerImp> {
                 ),
                 Text(
                   onBardingList[i].title!,
-                  style: Styles.textstyle25,
+                  style: Styles.textstyle25Bold,
                 ),
                 const SizedBox(
                   height: 20,
