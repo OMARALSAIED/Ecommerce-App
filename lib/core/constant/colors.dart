@@ -5,4 +5,5 @@ class APPColors {
   // static const  Color primaryColor = Color(0xff5DB1DF);
   static const  Color backgroundColor = Color(0xffF8F9FD);
   static const Color primaryColor = Color(0xffF2786D);
+   static const Color kBlue = Colors.blue;
 }
