@@ -1,23 +1,25 @@
-
+import 'package:ecommerce/controller/auth/signup_Controller.dart';
 import 'package:ecommerce/core/constant/colors.dart';
 import 'package:ecommerce/core/constant/styles.dart';
-import 'package:ecommerce/views/widgets/auth/Login/custom_button.dart';
-import 'package:ecommerce/views/widgets/auth/Login/logo_auth.dart';
-import 'package:ecommerce/views/widgets/auth/Login/text_form_app.dart';
+import 'package:ecommerce/views/widgets/auth/Custom_button.dart';
+import 'package:ecommerce/views/widgets/auth/Sign_And_log_text.dart';
+import 'package:ecommerce/views/widgets/auth/text_form_app.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class Signup extends StatelessWidget {
+  const Signup({super.key});
 
   @override
   Widget build(BuildContext context) {
+    SignupControllerImp controller = Get.put(SignupControllerImp());
     return Scaffold(
         appBar: AppBar(
           backgroundColor: APPColors.backgroundColor,
           elevation: 0.0,
           centerTitle: true,
           title: Text(
-            'Sign in',
+            'Sign Up',
             style: Styles.textstyle17Bold.copyWith(color: Colors.grey),
           ),
         ),
@@ -25,7 +27,6 @@ class Login extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
             child: ListView(
               children: [
-                const LogoAuth(),
                 const Text(
                   'Welcome Back',
                   textAlign: TextAlign.center,
@@ -46,14 +47,34 @@ class Login extends StatelessWidget {
                   height: 20,
                 ),
                 AppTextFormField(
+                  controller: controller.username,
+                  hinttext: 'Username',
+                  validator: (val) {},
+                  suffixIcon: const Icon(Icons.person_outline),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                AppTextFormField(
+                  controller: controller.email,
                   hinttext: 'Email',
                   validator: (val) {},
                   suffixIcon: const Icon(Icons.email),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 AppTextFormField(
+                  controller: controller.phone,
+                  hinttext: 'Phone',
+                  validator: (val) {},
+                  suffixIcon: const Icon(Icons.phone),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                AppTextFormField(
+                  controller: controller.password,
                   hinttext: 'password',
                   validator: (val) {},
                   suffixIcon: const Icon(Icons.lock_outline),
@@ -65,22 +86,16 @@ class Login extends StatelessWidget {
                   'Foget Password',
                   textAlign: TextAlign.end,
                 ),
-                CustomButtonAuth(text: 'sign in', onPressed: () {}),
-                SizedBox(
+                CustomButtonAuth(text: 'Sign Up', onPressed: () {}),
+                const SizedBox(
                   height: 30,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text("Don 't have an account ? "),
-                    InkWell(
-                      child: Text(
-                        'Sign Up',
-                        style: Styles.textstyle15
-                            .copyWith(color: APPColors.primaryColor),
-                      ),
-                    )
-                  ],
+                SignAndLogText(
+                  text1: 'have an account ? ',
+                  text2: 'Sign In',
+                  onTap: controller.goToLogin,
+                    
+                  
                 )
               ],
             )));

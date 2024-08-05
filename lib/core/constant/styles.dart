@@ -18,6 +18,10 @@ abstract class Styles {
     fontSize: 17,
     fontWeight: FontWeight.bold,
   );
+  static const textstyle17 = TextStyle(
+    fontSize: 17,
+    fontWeight: FontWeight.bold,
+  );
 
   static const textstyle13 = TextStyle(
     fontSize: 13,
@@ -30,8 +34,7 @@ abstract class Styles {
     fontSize: 13,
     fontWeight: FontWeight.w600,
   );
-  static const textstyle15= TextStyle(
+  static const textstyle15 = TextStyle(
     fontSize: 15,
-   
   );
 }

@@ -7,7 +7,7 @@ class AppTextFormField extends StatelessWidget {
   AppTextFormField(
       {super.key,
       required this.validator,
-      this.controller,
+    required  this.controller,
       this.contentPadding,
       this.focusedBorder,
       this.enabledBorder,
