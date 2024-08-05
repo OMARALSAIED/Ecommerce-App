@@ -1,26 +1,27 @@
-import 'package:ecommerce/controller/auth/login_controller.dart';
+import 'package:ecommerce/controller/auth/reset_password_controller.dart';
 import 'package:ecommerce/core/constant/colors.dart';
 import 'package:ecommerce/core/constant/styles.dart';
 import 'package:ecommerce/views/widgets/auth/Custom_button.dart';
-import 'package:ecommerce/views/widgets/auth/Sign_And_log_text.dart';
-import 'package:ecommerce/views/widgets/auth/logo_auth.dart';
 import 'package:ecommerce/views/widgets/auth/text_form_app.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class ResetPassword extends StatelessWidget {
+  const ResetPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
-    LoginControllerImp controller = Get.put(LoginControllerImp());
+    ResetPasswordControlleriImp controller =
+        Get.put(ResetPasswordControlleriImp());
     return Scaffold(
         appBar: AppBar(
           backgroundColor: APPColors.backgroundColor,
           elevation: 0.0,
           centerTitle: true,
           title: Text(
-            'Sign in',
+            'Reset Password',
             style: Styles.textstyle17Bold.copyWith(color: Colors.grey),
           ),
         ),
@@ -28,9 +29,8 @@ class Login extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
             child: ListView(
               children: [
-                const LogoAuth(),
                 const Text(
-                  'Welcome Back',
+                  'New Password',
                   textAlign: TextAlign.center,
                   style: Styles.textstyle25Bold,
                 ),
@@ -40,7 +40,7 @@ class Login extends StatelessWidget {
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 25),
                   child: Text(
-                    'Sign In With Your Email And Password OR \n Continue With Scoial Media',
+                    'Plaese Enter New Password',
                     textAlign: TextAlign.center,
                     style: Styles.textstyle13.copyWith(color: APPColors.gery),
                   ),
@@ -49,41 +49,24 @@ class Login extends StatelessWidget {
                   height: 20,
                 ),
                 AppTextFormField(
-                  controller: controller.email,
-                  hinttext: 'Email',
+                  controller: controller.newPassword,
+                  hinttext: 'Enter Your Password',
                   validator: (val) {},
                   suffixIcon: const Icon(Icons.email),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 AppTextFormField(
-                  controller: controller.password,
-                  hinttext: 'password',
+                  controller: controller.rePassword,
+                  hinttext: 'Re Enter Your Password',
                   validator: (val) {},
-                  suffixIcon: const Icon(Icons.lock_outline),
+                  suffixIcon: const Icon(Icons.email),
                 ),
                 const SizedBox(
                   height: 40,
                 ),
-                InkWell(
-                  onTap: () {
-                    controller.goToforgetpassword();
-                  },
-                  child: const Text(
-                    'Foget Password',
-                    textAlign: TextAlign.end,
-                  ),
-                ),
-                CustomButtonAuth(text: 'Sign in', onPressed: () {}),
-                const SizedBox(
-                  height: 30,
-                ),
-                SignAndLogText(
-                  onTap: controller.goToSignUp,
-                  text1: "Don 't have an account ? ",
-                  text2: 'Sign Up',
-                )
+                CustomButtonAuth(text: 'Check', onPressed: () {}),
               ],
             )));
   }
