@@ -1,3 +1,4 @@
+import 'package:ecommerce/core/constant/colors.dart';
 import 'package:flutter/material.dart';
 
 abstract class Styles {
@@ -10,6 +11,9 @@ abstract class Styles {
     fontSize: 25,
     fontWeight: FontWeight.bold,
   );
+
+  static const textstyle35Bold = TextStyle(
+      fontSize: 35, fontWeight: FontWeight.bold, color: APPColors.kBlack);
 
   static const textstyle30 =
       TextStyle(fontSize: 30, fontWeight: FontWeight.normal);

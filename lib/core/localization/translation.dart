@@ -44,10 +44,10 @@ class MyTranslation extends Translations {
           '36': 'تم اعادة تعيين كلمة المرور بنجاح',
           '37': 'تهانينا',
           '38': 'تم التسجيل بنجاح',
-          '39':'رمز التحقق',
-          '40':'تحقق من الرمز',
-          '41':'الرجاء إدخال رمز التحقق الذي تم إرساله للبريد الإلكتروني',
-          '42':'الرجاء إعادة كتابة كلمة المرور'
+          '39': 'رمز التحقق',
+          '40': 'تحقق من الرمز',
+          '41': 'الرجاء إدخال رمز التحقق الذي تم إرساله للبريد الإلكتروني',
+          '42': 'الرجاء إعادة كتابة كلمة المرور'
         },
         'en': {
           '1': 'Choose Language',
@@ -68,7 +68,7 @@ class MyTranslation extends Translations {
           '14': 'Forgot Password',
           '15': 'Login',
           '16': 'Don’t have an account?',
-          '17': 'Create Account',
+          '17': ' Create Account',
           '18': 'Email',
           '19': 'Password',
           '20': 'Username',
@@ -91,10 +91,10 @@ class MyTranslation extends Translations {
           '36': 'Password reset successfully',
           '37': 'Congratulations',
           '38': 'Registered successfully',
-          '39':'Verification Code',
-          '40':'Check Code',
-          '41':'Please Enter The Digit Code Sent To',
-          '42':'Please Re wirte Password '
+          '39': 'Verification Code',
+          '40': 'Check Code',
+          '41': 'Please Enter The Digit Code Sent To',
+          '42': 'Please Re wirte Password '
         }
       };
 }

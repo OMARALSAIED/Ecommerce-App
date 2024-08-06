@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 abstract class CheckEmailController extends GetxController {
   checkemail();
-  goToSuccessSignUp();
+  goToVerifiyCode();
 }
 
 class CheckEmailControllerImp extends CheckEmailController {
@@ -16,7 +16,7 @@ class CheckEmailControllerImp extends CheckEmailController {
   CheckEmailControllerImp() {}
 
   @override
-  goToSuccessSignUp() {
+  goToVerifiyCode() {
     Get.toNamed(Approutes.successSignUp);
   }
 
