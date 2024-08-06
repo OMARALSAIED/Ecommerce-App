@@ -1,5 +1,5 @@
 import 'package:ecommerce/core/constant/routes_name.dart';
-import 'package:ecommerce/data/data_source/static/static.dart';
+import 'package:ecommerce/data/data_source/static/static_onBoarding_List.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

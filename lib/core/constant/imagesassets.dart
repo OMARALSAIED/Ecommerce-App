@@ -8,6 +8,6 @@ class AppImagesassets {
   static const String OnBoardingFoure = '$rootImages/OnBardingfour.png';
 
   static const String OnOne = '$rootImages/onOne.png';
-  static const String OnTow = '$rootImages/onTow.png';
-  static const String OnThree = '$rootImages/onThree.png';
+  static const String OnThree = '$rootImages/onTow.png';
+  static const String OnTow = '$rootImages/onThree.png';
 }

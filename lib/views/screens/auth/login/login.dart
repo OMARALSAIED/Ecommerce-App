@@ -20,7 +20,7 @@ class Login extends StatelessWidget {
           elevation: 0.0,
           centerTitle: true,
           title: Text(
-            'Sign in',
+            '9'.tr,
             style: Styles.textstyle17Bold.copyWith(color: Colors.grey),
           ),
         ),
@@ -29,8 +29,8 @@ class Login extends StatelessWidget {
             child: ListView(
               children: [
                 const LogoAuth(),
-                const Text(
-                  'Welcome Back',
+                Text(
+                  '10'.tr,
                   textAlign: TextAlign.center,
                   style: Styles.textstyle25Bold,
                 ),
@@ -40,7 +40,7 @@ class Login extends StatelessWidget {
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 25),
                   child: Text(
-                    'Sign In With Your Email And Password OR \n Continue With Scoial Media',
+                    '11'.tr,
                     textAlign: TextAlign.center,
                     style: Styles.textstyle13.copyWith(color: APPColors.gery),
                   ),
@@ -50,7 +50,7 @@ class Login extends StatelessWidget {
                 ),
                 AppTextFormField(
                   controller: controller.email,
-                  hinttext: 'Email',
+                  hinttext: '12'.tr,
                   validator: (val) {},
                   suffixIcon: const Icon(Icons.email),
                 ),
@@ -59,7 +59,7 @@ class Login extends StatelessWidget {
                 ),
                 AppTextFormField(
                   controller: controller.password,
-                  hinttext: 'password',
+                  hinttext: '13'.tr,
                   validator: (val) {},
                   suffixIcon: const Icon(Icons.lock_outline),
                 ),
@@ -70,19 +70,19 @@ class Login extends StatelessWidget {
                   onTap: () {
                     controller.goToforgetpassword();
                   },
-                  child: const Text(
-                    'Foget Password',
+                  child: Text(
+                    '14'.tr,
                     textAlign: TextAlign.end,
                   ),
                 ),
-                CustomButtonAuth(text: 'Sign in', onPressed: () {}),
+                CustomButtonAuth(text: '15'.tr, onPressed: () {}),
                 const SizedBox(
                   height: 30,
                 ),
                 SignAndLogText(
                   onTap: controller.goToSignUp,
-                  text1: "Don 't have an account ? ",
-                  text2: 'Sign Up',
+                  text1: "16".tr,
+                  text2: '17'.tr,
                 )
               ],
             )));

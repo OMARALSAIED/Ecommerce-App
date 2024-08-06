@@ -1,27 +1,25 @@
-import 'package:ecommerce/controller/auth/reset_password_controller.dart';
+import 'package:ecommerce/controller/auth/forget_password_controller.dart';
 import 'package:ecommerce/core/constant/colors.dart';
 import 'package:ecommerce/core/constant/styles.dart';
 import 'package:ecommerce/views/widgets/auth/Custom_button.dart';
 import 'package:ecommerce/views/widgets/auth/text_form_app.dart';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
-class ResetPassword extends StatelessWidget {
-  const ResetPassword({super.key});
+class ForgetPassword extends StatelessWidget {
+  const ForgetPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
-    ResetPasswordControlleriImp controller =
-        Get.put(ResetPasswordControlleriImp());
+    ForgetPasswordControllerImp controller =
+        Get.put(ForgetPasswordControllerImp());
     return Scaffold(
         appBar: AppBar(
           backgroundColor: APPColors.backgroundColor,
           elevation: 0.0,
           centerTitle: true,
           title: Text(
-            'Reset Password',
+            '14'.tr,
             style: Styles.textstyle17Bold.copyWith(color: Colors.grey),
           ),
         ),
@@ -29,8 +27,8 @@ class ResetPassword extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
             child: ListView(
               children: [
-                const Text(
-                  'New Password',
+               Text(
+                  '27'.tr,
                   textAlign: TextAlign.center,
                   style: Styles.textstyle25Bold,
                 ),
@@ -40,7 +38,7 @@ class ResetPassword extends StatelessWidget {
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 25),
                   child: Text(
-                    'Plaese Enter New Password',
+                    '29'.tr,
                     textAlign: TextAlign.center,
                     style: Styles.textstyle13.copyWith(color: APPColors.gery),
                   ),
@@ -49,24 +47,19 @@ class ResetPassword extends StatelessWidget {
                   height: 20,
                 ),
                 AppTextFormField(
-                  controller: controller.newPassword,
-                  hinttext: 'Enter Your Password',
-                  validator: (val) {},
-                  suffixIcon: const Icon(Icons.email),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                AppTextFormField(
-                  controller: controller.rePassword,
-                  hinttext: 'Re Enter Your Password',
+                  controller: controller.email,
+                  hinttext: '12'.tr,
                   validator: (val) {},
                   suffixIcon: const Icon(Icons.email),
                 ),
                 const SizedBox(
                   height: 40,
                 ),
-                CustomButtonAuth(text: 'Check', onPressed: () {}),
+                CustomButtonAuth(
+                    text: '30'.tr,
+                    onPressed: () {
+                      controller.goToVeryfiyCode();
+                    }),
               ],
             )));
   }

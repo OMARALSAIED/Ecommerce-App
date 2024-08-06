@@ -2,9 +2,10 @@ import 'package:ecommerce/core/constant/colors.dart';
 import 'package:ecommerce/core/constant/styles.dart';
 import 'package:ecommerce/views/widgets/auth/Custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class SuccessSignup extends StatelessWidget {
-  const SuccessSignup({super.key});
+class SuccessResetPassword extends StatelessWidget {
+  const SuccessResetPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class SuccessSignup extends StatelessWidget {
         elevation: 0.0,
         centerTitle: true,
         title: Text(
-          'Success',
+          '32'.tr,
           style: Styles.textstyle17Bold.copyWith(color: Colors.grey),
         ),
       ),
@@ -35,7 +36,7 @@ class SuccessSignup extends StatelessWidget {
             Spacer(),
             Container(
                 width: double.infinity,
-                child: CustomButtonAuth(text: 'Go To Login', onPressed: () {})),
+                child: CustomButtonAuth(text: '31'.tr, onPressed: () {})),
           const  SizedBox(
               height: 30,
             ),

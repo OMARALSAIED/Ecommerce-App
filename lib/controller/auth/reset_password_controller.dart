@@ -1,5 +1,5 @@
 import 'package:ecommerce/core/constant/routes_name.dart';
-import 'package:ecommerce/views/screens/auth/login/reset_password.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -35,6 +35,6 @@ class ResetPasswordControlleriImp extends ResetPasswordController {
 
   @override
   goToSuccessResetPassword() {
-    Get.offNamed(Approutes.verfiycode);
+    Get.offNamed(Approutes.successresetpassword);
   }
 }

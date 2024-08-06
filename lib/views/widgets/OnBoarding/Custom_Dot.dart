@@ -1,6 +1,6 @@
 import 'package:ecommerce/controller/on_Boarding_Controller.dart';
 import 'package:ecommerce/core/constant/colors.dart';
-import 'package:ecommerce/data/data_source/static/static.dart';
+import 'package:ecommerce/data/data_source/static/static_onBoarding_List.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

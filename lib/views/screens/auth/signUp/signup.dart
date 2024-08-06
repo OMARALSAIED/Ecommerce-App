@@ -86,7 +86,11 @@ class Signup extends StatelessWidget {
                   'Foget Password',
                   textAlign: TextAlign.end,
                 ),
-                CustomButtonAuth(text: 'Sign Up', onPressed: () {}),
+                CustomButtonAuth(
+                    text: 'Sign Up',
+                    onPressed: () {
+                      controller.signup();
+                    }),
                 const SizedBox(
                   height: 30,
                 ),
@@ -94,8 +98,6 @@ class Signup extends StatelessWidget {
                   text1: 'have an account ? ',
                   text2: 'Sign In',
                   onTap: controller.goToLogin,
-                    
-                  
                 )
               ],
             )));

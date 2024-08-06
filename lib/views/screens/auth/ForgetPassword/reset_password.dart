@@ -1,24 +1,27 @@
-
-import 'package:ecommerce/controller/auth/verfiy_Controller.dart';
+import 'package:ecommerce/controller/auth/reset_password_controller.dart';
 import 'package:ecommerce/core/constant/colors.dart';
 import 'package:ecommerce/core/constant/styles.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
-import 'package:get/get.dart';
+import 'package:ecommerce/views/widgets/auth/Custom_button.dart';
+import 'package:ecommerce/views/widgets/auth/text_form_app.dart';
 
-class VerfiyCode extends StatelessWidget {
-  const VerfiyCode({super.key});
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+class ResetPassword extends StatelessWidget {
+  const ResetPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
-    VerfiyCodeControlleriImp controller = Get.put(VerfiyCodeControlleriImp());
+    ResetPasswordControlleriImp controller =
+        Get.put(ResetPasswordControlleriImp());
     return Scaffold(
         appBar: AppBar(
           backgroundColor: APPColors.backgroundColor,
           elevation: 0.0,
           centerTitle: true,
           title: Text(
-            'Verification Code',
+            'Reset Password',
             style: Styles.textstyle17Bold.copyWith(color: Colors.grey),
           ),
         ),
@@ -26,8 +29,8 @@ class VerfiyCode extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
             child: ListView(
               children: [
-                const Text(
-                  'Check Code',
+               Text(
+                  '35'.tr,
                   textAlign: TextAlign.center,
                   style: Styles.textstyle25Bold,
                 ),
@@ -37,7 +40,7 @@ class VerfiyCode extends StatelessWidget {
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 25),
                   child: Text(
-                    'Please Enter The Digit Code Sent To omar@gmail.com',
+                    '35'.tr,
                     textAlign: TextAlign.center,
                     style: Styles.textstyle13.copyWith(color: APPColors.gery),
                   ),
@@ -45,25 +48,29 @@ class VerfiyCode extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                OtpTextField(
-                  fieldWidth: 50,
-                  borderRadius: BorderRadius.circular(15),
-                  numberOfFields: 5,
-                  borderColor: Color(0xFF512DA8),
-                  //set to true to show as box or false to show as dash
-                  showFieldAsBox: true,
-                  //runs when a code is typed in
-                  onCodeChanged: (String code) {
-                    //handle validation or checks here
-                  },
-                  //runs when every textfield is filled
-                  onSubmit: (String verificationCode) {
-                    controller.goToResetpassword();
-                  }, // end onSubmit
+                AppTextFormField(
+                  controller: controller.newPassword,
+                  hinttext: '34'.tr,
+                  validator: (val) {},
+                  suffixIcon: const Icon(Icons.email),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                AppTextFormField(
+                  controller: controller.rePassword,
+                  hinttext: '42'.tr,
+                  validator: (val) {},
+                  suffixIcon: const Icon(Icons.email),
                 ),
                 const SizedBox(
                   height: 40,
                 ),
+                CustomButtonAuth(
+                    text: '33'.tr,
+                    onPressed: () {
+                      controller.goToSuccessResetPassword();
+                    }),
               ],
             )));
   }
