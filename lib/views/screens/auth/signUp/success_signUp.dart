@@ -43,7 +43,7 @@ class SuccessSignup extends StatelessWidget {
               height: 10,
             ),
             Text(
-              '36'.tr,
+              '28'.tr,
               style: Styles.textstyle15,
             ),
             Spacer(),
