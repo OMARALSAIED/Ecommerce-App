@@ -1,6 +1,7 @@
 import 'package:ecommerce/controller/auth/signup_Controller.dart';
 import 'package:ecommerce/core/constant/colors.dart';
 import 'package:ecommerce/core/constant/styles.dart';
+import 'package:ecommerce/core/functions/alertexit_App.dart';
 import 'package:ecommerce/core/functions/vaild_Input.dart';
 import 'package:ecommerce/views/widgets/auth/Custom_button.dart';
 import 'package:ecommerce/views/widgets/auth/Sign_And_log_text.dart';
@@ -29,7 +30,7 @@ class Signup extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
             child: Form(
               key: controller.formstate,
-              child: ListView(
+              child: WillPopScope(onWillPop: alertEixtApp, child: ListView(
                 children: [
                   const Text(
                     'Make Your Account',
@@ -51,6 +52,7 @@ class Signup extends StatelessWidget {
                     height: 20,
                   ),
                   AppTextFormField(
+                    isNumber: false,
                     controller: controller.username,
                     hinttext: 'Username',
                     validator: (val) {
@@ -62,6 +64,7 @@ class Signup extends StatelessWidget {
                     height: 10,
                   ),
                   AppTextFormField(
+                    isNumber: false,
                     controller: controller.email,
                     hinttext: 'Email',
                     validator: (val) {
@@ -73,6 +76,7 @@ class Signup extends StatelessWidget {
                     height: 10,
                   ),
                   AppTextFormField(
+                    isNumber: true,
                     controller: controller.phone,
                     hinttext: 'Phone',
                     validator: (val) {
@@ -84,6 +88,7 @@ class Signup extends StatelessWidget {
                     height: 10,
                   ),
                   AppTextFormField(
+                    isNumber: false,
                     controller: controller.password,
                     hinttext: 'password',
                     validator: (val) {
@@ -108,7 +113,7 @@ class Signup extends StatelessWidget {
                     onTap: controller.goToLogin,
                   )
                 ],
-              ),
+              ))
             )),
         ));
   }

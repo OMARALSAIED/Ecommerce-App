@@ -49,19 +49,21 @@ class ResetPassword extends StatelessWidget {
                   height: 20,
                 ),
                 AppTextFormField(
+                  isNumber: false,
                   controller: controller.newPassword,
                   hinttext: '34'.tr,
                   validator: (val) {},
-                  suffixIcon: const Icon(Icons.email),
+                  suffixIcon: const Icon(Icons.lock_outline),
                 ),
                 const SizedBox(
                   height: 10,
                 ),
                 AppTextFormField(
+                  isNumber: false,
                   controller: controller.rePassword,
                   hinttext: '42'.tr,
                   validator: (val) {},
-                  suffixIcon: const Icon(Icons.email),
+                  suffixIcon: const Icon(Icons.lock_outline),
                 ),
                 const SizedBox(
                   height: 40,

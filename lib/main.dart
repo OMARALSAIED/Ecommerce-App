@@ -13,6 +13,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initialServices();
   runApp(const MyApp());
+  
 }
 
 class MyApp extends StatelessWidget {

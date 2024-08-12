@@ -50,6 +50,7 @@ class ForgetPassword extends StatelessWidget {
                     height: 20,
                   ),
                   AppTextFormField(
+                    isNumber: false,
                     controller: controller.email,
                     hinttext: '12'.tr,
                     validator: (val) {
