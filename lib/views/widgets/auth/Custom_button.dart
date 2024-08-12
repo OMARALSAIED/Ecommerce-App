@@ -2,6 +2,7 @@ import 'package:ecommerce/core/constant/colors.dart';
 import 'package:ecommerce/core/constant/styles.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class CustomButtonAuth extends StatelessWidget {
   String text;
   final void Function()? onPressed;
