@@ -20,7 +20,11 @@ class TestController extends GetxController {
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       //اذا كانت البيانات الراجعة صحيحة اعرضها
-      data.addAll(response['data']);
+      if (response['status'] == "success") {
+        data.addAll(response['data']);
+      } else {
+        statusRequest = StatusRequest.failuer;
+      }
     }
     update();
   }
