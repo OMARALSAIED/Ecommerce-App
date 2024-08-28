@@ -1,10 +1,9 @@
-import 'package:ecommerce/binding.dart';
+
+import 'package:ecommerce/binding/inital_binding.dart';
 import 'package:ecommerce/core/localization/changelocal.dart';
 import 'package:ecommerce/core/localization/translation.dart';
 import 'package:ecommerce/core/services/services.dart';
 import 'package:ecommerce/routes.dart';
-
-import 'package:ecommerce/views/screens/language.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -32,7 +31,7 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.playfairDisplayTextTheme(),
       ),
       
-      initialBinding: Mybinding(),
+      initialBinding: InitalBindingss(),
       
       getPages:routes,
       //routes: routes,

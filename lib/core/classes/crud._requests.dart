@@ -7,7 +7,9 @@ import 'package:http/http.dart' as http;
 
 class Crud {
   Future<Either<StatusRequest, Map>> postData(String linkeurl, Map data) async {
-    if (await ckeckInternet()) {
+    try 
+    {
+          if (await ckeckInternet()) {
       var response = await http.post(Uri.parse(linkeurl), body: data);
       if (response.statusCode == 200) {
         Map responsebody = jsonDecode(response.body);
@@ -17,6 +19,10 @@ class Crud {
       }
     } else {
       return const Left(StatusRequest.offlinefailuer);
+    }
+    }
+     catch (_) {
+      return const Left(StatusRequest.serverfailuer);
     }
   }
 }
