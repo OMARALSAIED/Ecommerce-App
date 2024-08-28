@@ -1,6 +1,7 @@
 import 'package:ecommerce/core/constant/routes_name.dart';
 import 'package:ecommerce/core/middleware/my_middelwaer.dart';
 import 'package:ecommerce/test.dart';
+import 'package:ecommerce/test_view.dart';
 import 'package:ecommerce/views/screens/auth/ForgetPassword/forget_password.dart';
 
 import 'package:ecommerce/views/screens/auth/login/login.dart';
@@ -11,14 +12,19 @@ import 'package:ecommerce/views/screens/auth/signUp/Verifiy_code_SignUp.dart';
 import 'package:ecommerce/views/screens/auth/signUp/signup.dart';
 import 'package:ecommerce/views/screens/auth/signUp/success_signUp.dart';
 import 'package:ecommerce/views/screens/language.dart';
+
 import 'package:ecommerce/views/screens/onboarding.dart';
+import 'package:get/get.dart';
 
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 List<GetPage<dynamic>>? routes = [
-  GetPage(name:"/", page: () => const Language(),middlewares: [
-    MyMiddelwaer()
-  ]),
+  // GetPage(name:"/", page: () =>const  Language(),middlewares: [
+  //   MyMiddelwaer()
+  // ]),
+
+
+  GetPage(name: '/', page:()=> TestView()),
   GetPage(name: Approutes.login, page: () => const Login()),
   GetPage(name: Approutes.onBoarding, page: () => const OnBoarding()),
   GetPage(name: Approutes.SignUp, page: () => const Signup()),
@@ -34,6 +40,8 @@ List<GetPage<dynamic>>? routes = [
 
        GetPage(
       name: Approutes.test, page: () => const Test()),
+         GetPage(
+      name: Approutes.testView, page: () => const TestView()),
 ];
 
 

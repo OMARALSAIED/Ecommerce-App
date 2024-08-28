@@ -16,10 +16,18 @@ class TestController extends GetxController {
     statusRequest = StatusRequest.loading;
 
     var response = await testData.getData();
-
+    print("==================$response");
     statusRequest = handlingData(response);
-    if (StatusRequest.success == statusRequest) {//اذا كانت البيانات الراجعة صحيحة اعرضها
+    if (StatusRequest.success == statusRequest) {
+      //اذا كانت البيانات الراجعة صحيحة اعرضها
       data.addAll(response['data']);
     }
+    update();
+  }
+
+  @override
+  void onInit() {
+    getData();
+    super.onInit();
   }
 }
