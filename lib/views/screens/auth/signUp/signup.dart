@@ -1,4 +1,5 @@
 import 'package:ecommerce/controller/auth/signup_Controller.dart';
+import 'package:ecommerce/core/classes/Status_Request.dart';
 import 'package:ecommerce/core/constant/colors.dart';
 import 'package:ecommerce/core/constant/styles.dart';
 import 'package:ecommerce/core/functions/alertexit_App.dart';
@@ -14,7 +15,7 @@ class Signup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-  Get.lazyPut(()=>SignupControllerImp());//lazy to delete memory after signup or login
+    Get.lazyPut(()=>SignupControllerImp());//lazy to delete memory after signup or login
     return Scaffold(
         appBar: AppBar(
           backgroundColor: APPColors.backgroundColor,
@@ -26,7 +27,11 @@ class Signup extends StatelessWidget {
           ),
         ),
         body: GetBuilder<SignupControllerImp>(
-          builder: (controller) => Container(
+          builder: (controller) =>
+          
+          controller.statusRequest==StatusRequest.loading?
+          Center(child: Text("Loadgin ...."),):
+           Container(
             padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
             child: Form(
               key: controller.formstate,

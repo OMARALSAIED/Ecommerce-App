@@ -24,14 +24,14 @@ class SignupControllerImp extends SignupController {
   late TextEditingController phone;
   late TextEditingController password;
 
-  late StatusRequest statusRequest;
+  late StatusRequest statusRequest = StatusRequest.inital;
   @override
   signup() async {
     var formdata = formstate.currentState;
 
     if (formdata!.validate()) {
       statusRequest = StatusRequest.loading;
-
+      update();
       var response = await signupData.postData(
           username.text, password.text, email.text, phone.text);
       print("==================$response");
@@ -50,7 +50,7 @@ class SignupControllerImp extends SignupController {
       }
       update();
       print('Data vaild');
-      Get.offNamed(Approutes.verifiyCodeSignUp);
+      Get.offNamed(Approutes.verifiyCodeSignUp,arguments: {"email":email.text});
       // Get.delete<SignupControllerImp>();//to make sure there is no crash memory
     } else {
       print('Data not vaild');
