@@ -19,12 +19,12 @@ import 'package:get/get.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 List<GetPage<dynamic>>? routes = [
-  // GetPage(name:"/", page: () =>const  Language(),middlewares: [
-  //   MyMiddelwaer()
-  // ]),
+  GetPage(name:"/", page: () =>const  Language(),middlewares: [
+    MyMiddelwaer()
+  ]),
 
 
-  GetPage(name: '/', page:()=> TestView()),
+  // GetPage(name: '/', page:()=> TestView()),
   GetPage(name: Approutes.login, page: () => const Login()),
   GetPage(name: Approutes.onBoarding, page: () => const OnBoarding()),
   GetPage(name: Approutes.SignUp, page: () => const Signup()),

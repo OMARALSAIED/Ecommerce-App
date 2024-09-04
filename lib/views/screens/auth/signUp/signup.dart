@@ -14,7 +14,7 @@ class Signup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Get.lazyPut(()=>SignupControllerImp());//lazy to delete memory after signup or login
+  Get.lazyPut(()=>SignupControllerImp());//lazy to delete memory after signup or login
     return Scaffold(
         appBar: AppBar(
           backgroundColor: APPColors.backgroundColor,

@@ -1,6 +1,7 @@
 import 'package:ecommerce/controller/test_controller.dart';
 
 import 'package:ecommerce/core/classes/handling_data_view.dart';
+import 'package:ecommerce/core/constant/colors.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -19,20 +20,18 @@ class _TestViewState extends State<TestView> {
     Get.put(TestController());
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: APPColors.primaryColor,
         title: Text("data"),
       ),
       body: GetBuilder<TestController>(builder: (controller) {
-
-
-        return HandlingDataView(statusRequest: controller.statusRequest, widget:  ListView.builder(
-          itemCount: controller.data.length,
-          itemBuilder: (context,index)
-          {
-             return Text('${controller.data}');
-          },
-
-        ));
-   
+        return HandlingDataView(
+            statusRequest: controller.statusRequest,
+            widget: ListView.builder(
+              itemCount: controller.data.length,
+              itemBuilder: (context, index) {
+                return Text('${controller.data}');
+              },
+            ));
       }),
     );
   }
