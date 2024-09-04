@@ -1,4 +1,7 @@
+import 'package:ecommerce/core/classes/Status_Request.dart';
 import 'package:ecommerce/core/constant/routes_name.dart';
+import 'package:ecommerce/core/functions/handling_data_controller.dart';
+import 'package:ecommerce/data/data_source/remote/auth/signUp.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -10,17 +13,38 @@ abstract class SignupController extends GetxController {
 }
 
 class SignupControllerImp extends SignupController {
+
+   SignupData signupData = SignupData(Get.find());
+
+  List data = [];
+
   GlobalKey<FormState> formstate = GlobalKey<FormState>();
 
   late TextEditingController username;
   late TextEditingController email;
   late TextEditingController phone;
   late TextEditingController password;
+
+ late StatusRequest statusRequest;
   @override
-  signup() {
+  signup() async {
     var formdata = formstate.currentState;
 
     if (formdata!.validate()) {
+      statusRequest = StatusRequest.loading;
+
+      var response = await signupData.postData(username.text, password.text, email.text, phone.text);
+      print("==================$response");
+      statusRequest = handlingData(response);
+      if (StatusRequest.success == statusRequest) {
+        //اذا كانت البيانات الراجعة صحيحة اعرضها
+        if (response['status'] == "success") {
+          data.addAll(response['data']);
+        } else {
+          statusRequest = StatusRequest.failuer;
+        }
+      }
+      update();
       print('Data vaild');
       Get.offNamed(Approutes.verifiyCodeSignUp);
       // Get.delete<SignupControllerImp>();//to make sure there is no crash memory
