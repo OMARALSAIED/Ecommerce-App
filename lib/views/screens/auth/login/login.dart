@@ -83,9 +83,9 @@ class _LoginState extends State<Login> {
                         },
                         suffixIcon: InkWell(
                           onTap: () {
-                             setState(() {
-                                 isObsecure = !isObsecure;
-                             });
+                            setState(() {
+                              isObsecure = !isObsecure;
+                            });
                           },
                           child: Icon(isObsecure
                               ? Icons.visibility
@@ -117,7 +117,6 @@ class _LoginState extends State<Login> {
                         text1: "16".tr,
                         text2: '17'.tr,
                       ),
-                      ElevatedButton(onPressed: (){}, child: Text(""))
                     ],
                   ),
                 ))));
