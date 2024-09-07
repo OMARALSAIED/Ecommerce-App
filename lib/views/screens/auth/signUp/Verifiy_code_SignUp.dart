@@ -1,5 +1,9 @@
 
 import 'package:ecommerce/controller/auth/Verifiy_Code_SignUp.dart';
+<<<<<<< HEAD
+=======
+import 'package:ecommerce/core/classes/Status_Request.dart';
+>>>>>>> 280f663fe86c80d1942237ce889a3f7ea71dd254
 import 'package:ecommerce/core/constant/colors.dart';
 import 'package:ecommerce/core/constant/styles.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +15,11 @@ class VerifiyCodeSignup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     VerfiyCodeControllerSignUpiImp controller = Get.put(VerfiyCodeControllerSignUpiImp());
+=======
+   // VerfiyCodeControllerSignUpiImp controller = Get.put(VerfiyCodeControllerSignUpiImp());
+>>>>>>> 280f663fe86c80d1942237ce889a3f7ea71dd254
     return Scaffold(
         appBar: AppBar(
           backgroundColor: APPColors.backgroundColor,
@@ -22,7 +30,15 @@ class VerifiyCodeSignup extends StatelessWidget {
             style: Styles.textstyle17Bold.copyWith(color: Colors.grey),
           ),
         ),
+<<<<<<< HEAD
         body: Container(
+=======
+        body:GetBuilder<VerfiyCodeControllerSignUpiImp>(builder: (controller)=>
+        controller.statusRequest==StatusRequest.loading ?
+        Center(child: Text("Loading ..."),)
+        :
+         Container(
+>>>>>>> 280f663fe86c80d1942237ce889a3f7ea71dd254
             padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
             child: ListView(
               children: [
@@ -65,6 +81,10 @@ class VerifiyCodeSignup extends StatelessWidget {
                   height: 40,
                 ),
               ],
+<<<<<<< HEAD
             )));
+=======
+            )),));
+>>>>>>> 280f663fe86c80d1942237ce889a3f7ea71dd254
   }
 }

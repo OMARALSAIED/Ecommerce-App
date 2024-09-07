@@ -2,7 +2,10 @@ import 'package:ecommerce/core/constant/routes_name.dart';
 import 'package:ecommerce/core/middleware/my_middelwaer.dart';
 import 'package:ecommerce/test.dart';
 import 'package:ecommerce/test_view.dart';
+<<<<<<< HEAD
 import 'package:ecommerce/views/screens/Home/home.dart';
+=======
+>>>>>>> 280f663fe86c80d1942237ce889a3f7ea71dd254
 import 'package:ecommerce/views/screens/auth/ForgetPassword/forget_password.dart';
 
 import 'package:ecommerce/views/screens/auth/login/login.dart';
@@ -43,8 +46,11 @@ List<GetPage<dynamic>>? routes = [
       name: Approutes.test, page: () => const Test()),
          GetPage(
       name: Approutes.testView, page: () => const TestView()),
+<<<<<<< HEAD
          GetPage(
       name: Approutes.home, page: () => const HomePage()),
+=======
+>>>>>>> 280f663fe86c80d1942237ce889a3f7ea71dd254
 ];
 
 
