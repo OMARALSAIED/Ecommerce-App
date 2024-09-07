@@ -1,38 +1,40 @@
 import 'package:ecommerce/core/classes/Status_Request.dart';
 import 'package:ecommerce/core/constant/routes_name.dart';
 import 'package:ecommerce/core/functions/handling_data_controller.dart';
-import 'package:ecommerce/data/data_source/remote/auth/verifiy_Code_signUp_data.dart';
+import 'package:ecommerce/data/data_source/remote/Forgetpassword/Verifiy_fogetPassword_data.dart';
 import 'package:get/get.dart';
 
-abstract class VerfiyCodeControllerSignUp extends GetxController {
+abstract class VerfiyCodeController extends GetxController {
   checkCode();
-  goToSuccessSignUp();
+  goToResetpassword(String verfiyCode );
 }
 
-class VerfiyCodeControllerSignUpiImp extends VerfiyCodeControllerSignUp {
-  late String verfiyCode;
-  VerifiysingupData verifiysingupData = VerifiysingupData(Get.find());
-  String? email;
+class VerfiyCodeControlleriImp extends VerfiyCodeController {
+
   StatusRequest? statusRequest;
+  String? email;
+  String? verfiyCode;
+
+  VerifiyForgetData verifiyForgetData = VerifiyForgetData(Get.find());
 
   @override
-  VerfiyCodeControllerSignUpiImp() {}
+  VerfiyCodeControlleriImp() {}
 
   @override
   checkCode() {}
 
   @override
-  goToSuccessSignUp() async {
-    statusRequest = StatusRequest.loading;
+  goToResetpassword(verfiyCode)async {
+     statusRequest = StatusRequest.loading;
     update();
 
-    var response = await verifiysingupData.postData(email!, verfiyCode);
+    var response = await verifiyForgetData.postData(email!, verfiyCode);
     print("==================$response");
 
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
-        Get.offNamed(Approutes.successSignUp);
+        Get.offNamed(Approutes.resetpassword,arguments: {"email":email});
       } else {
         Get.defaultDialog(
             title: "Warning",
@@ -42,10 +44,11 @@ class VerfiyCodeControllerSignUpiImp extends VerfiyCodeControllerSignUp {
     }
     update();
   }
+  
 
   @override
   void onInit() {
-    email = Get.arguments['email']; // يتم تمرير البريد الإلكتروني هنا من الصفحة السابقة
+    email = Get.arguments['email'];
     super.onInit();
   }
 }

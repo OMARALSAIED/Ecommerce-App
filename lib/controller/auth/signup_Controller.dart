@@ -2,9 +2,7 @@ import 'package:ecommerce/core/classes/Status_Request.dart';
 import 'package:ecommerce/core/constant/routes_name.dart';
 import 'package:ecommerce/core/functions/handling_data_controller.dart';
 import 'package:ecommerce/data/data_source/remote/auth/signUp_Data.dart';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 abstract class SignupController extends GetxController {
@@ -14,7 +12,6 @@ abstract class SignupController extends GetxController {
 
 class SignupControllerImp extends SignupController {
   SignupData signupData = SignupData(Get.find());
-
   List data = [];
 
   GlobalKey<FormState> formstate = GlobalKey<FormState>();
@@ -24,48 +21,37 @@ class SignupControllerImp extends SignupController {
   late TextEditingController phone;
   late TextEditingController password;
 
-<<<<<<< HEAD
-  late StatusRequest statusRequest;
-=======
-  late StatusRequest statusRequest = StatusRequest.inital;
->>>>>>> 280f663fe86c80d1942237ce889a3f7ea71dd254
+  StatusRequest statusRequest = StatusRequest.inital; // دمج الاختلافات بشكل صحيح
+
   @override
   signup() async {
     var formdata = formstate.currentState;
 
     if (formdata!.validate()) {
       statusRequest = StatusRequest.loading;
-<<<<<<< HEAD
+      update(); // تحديث حالة التطبيق لعرض حالة التحميل
 
-=======
-      update();
->>>>>>> 280f663fe86c80d1942237ce889a3f7ea71dd254
       var response = await signupData.postData(
           username.text, password.text, email.text, phone.text);
       print("==================$response");
+
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
-        //اذا كانت البيانات الراجعة صحيحة اعرضها
+        // إذا كانت البيانات الراجعة صحيحة
         if (response['status'] == "success") {
           data.addAll(response['data']);
-          Get.offNamed(Approutes.verifiyCodeSignUp);
+          Get.offNamed(Approutes.verifiyCodeSignUp, arguments: {"email": email.text});
         } else {
           Get.defaultDialog(
-              title: "Waning",
-              middleText: "Warning phone number or email already Exists");
+              title: "Warning",
+              middleText: "Phone number or email already exists");
           statusRequest = StatusRequest.failuer;
         }
       }
-      update();
-      print('Data vaild');
-<<<<<<< HEAD
-      Get.offNamed(Approutes.verifiyCodeSignUp);
-=======
-      Get.offNamed(Approutes.verifiyCodeSignUp,arguments: {"email":email.text});
->>>>>>> 280f663fe86c80d1942237ce889a3f7ea71dd254
-      // Get.delete<SignupControllerImp>();//to make sure there is no crash memory
+      update(); // تحديث حالة التطبيق بعد المعالجة
+      print('Data valid');
     } else {
-      print('Data not vaild');
+      print('Data not valid');
     }
   }
 
@@ -86,7 +72,6 @@ class SignupControllerImp extends SignupController {
   @override
   void dispose() {
     username.dispose();
-
     email.dispose();
     phone.dispose();
     password.dispose();

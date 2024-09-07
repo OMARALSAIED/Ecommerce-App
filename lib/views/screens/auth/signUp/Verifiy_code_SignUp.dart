@@ -1,9 +1,5 @@
-
 import 'package:ecommerce/controller/auth/Verifiy_Code_SignUp.dart';
-<<<<<<< HEAD
-=======
 import 'package:ecommerce/core/classes/Status_Request.dart';
->>>>>>> 280f663fe86c80d1942237ce889a3f7ea71dd254
 import 'package:ecommerce/core/constant/colors.dart';
 import 'package:ecommerce/core/constant/styles.dart';
 import 'package:flutter/material.dart';
@@ -15,76 +11,61 @@ class VerifiyCodeSignup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
+    // Initialize the controller
     VerfiyCodeControllerSignUpiImp controller = Get.put(VerfiyCodeControllerSignUpiImp());
-=======
-   // VerfiyCodeControllerSignUpiImp controller = Get.put(VerfiyCodeControllerSignUpiImp());
->>>>>>> 280f663fe86c80d1942237ce889a3f7ea71dd254
+
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: APPColors.backgroundColor,
-          elevation: 0.0,
-          centerTitle: true,
-          title: Text(
-            '39'.tr,
-            style: Styles.textstyle17Bold.copyWith(color: Colors.grey),
-          ),
+      appBar: AppBar(
+        backgroundColor: APPColors.backgroundColor,
+        elevation: 0.0,
+        centerTitle: true,
+        title: Text(
+          '39'.tr,
+          style: Styles.textstyle17Bold.copyWith(color: Colors.grey),
         ),
-<<<<<<< HEAD
-        body: Container(
-=======
-        body:GetBuilder<VerfiyCodeControllerSignUpiImp>(builder: (controller)=>
-        controller.statusRequest==StatusRequest.loading ?
-        Center(child: Text("Loading ..."),)
-        :
-         Container(
->>>>>>> 280f663fe86c80d1942237ce889a3f7ea71dd254
-            padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-            child: ListView(
-              children: [
-                 Text(
-                  '40'.tr,
-                  textAlign: TextAlign.center,
-                  style: Styles.textstyle25Bold,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 25),
-                  child: Text(
-                    '41'.tr,
+      ),
+      body: GetBuilder<VerfiyCodeControllerSignUpiImp>(
+        builder: (controller) => 
+          controller.statusRequest == StatusRequest.loading
+          ? Center(child: Text("Loading ..."))
+          : Container(
+              padding:const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+              child: ListView(
+                children: [
+                  Text(
+                    '40'.tr,
                     textAlign: TextAlign.center,
-                    style: Styles.textstyle13.copyWith(color: APPColors.gery),
+                    style: Styles.textstyle25Bold,
                   ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                OtpTextField(
-                  fieldWidth: 50,
-                  borderRadius: BorderRadius.circular(15),
-                  numberOfFields: 5,
-                  borderColor: Color(0xFF512DA8),
-                  //set to true to show as box or false to show as dash
-                  showFieldAsBox: true,
-                  //runs when a code is typed in
-                  onCodeChanged: (String code) {
-                    //handle validation or checks here
-                  },
-                  //runs when every textfield is filled
-                  onSubmit: (String verificationCode) {
-                    controller.goToSuccessSignUp();
-                  }, // end onSubmit
-                ),
-                const SizedBox(
-                  height: 40,
-                ),
-              ],
-<<<<<<< HEAD
-            )));
-=======
-            )),));
->>>>>>> 280f663fe86c80d1942237ce889a3f7ea71dd254
+                  const SizedBox(height: 10),
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 25),
+                    child: Text(
+                      '41'.tr,
+                      textAlign: TextAlign.center,
+                      style: Styles.textstyle13.copyWith(color: APPColors.gery),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  OtpTextField(
+                    fieldWidth: 50,
+                    borderRadius: BorderRadius.circular(15),
+                    numberOfFields: 5,
+                    borderColor:const
+                     Color(0xFF512DA8),
+                    showFieldAsBox: true,
+                    onCodeChanged: (String code) {
+                      // Handle validation or checks here
+                    },
+                    onSubmit: (String verificationCode) {
+                      controller.goToSuccessSignUp();
+                    },
+                  ),
+                  const SizedBox(height: 40),
+                ],
+              ),
+            ),
+      ),
+    );
   }
 }

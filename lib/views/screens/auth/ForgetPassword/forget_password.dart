@@ -1,4 +1,4 @@
-import 'package:ecommerce/controller/auth/forget_password_controller.dart';
+import 'package:ecommerce/controller/FotgetPassword/forget_password_controller.dart';
 import 'package:ecommerce/core/constant/colors.dart';
 import 'package:ecommerce/core/constant/styles.dart';
 import 'package:ecommerce/core/functions/vaild_Input.dart';
@@ -64,7 +64,7 @@ class ForgetPassword extends StatelessWidget {
                   CustomButtonAuth(
                       text: '30'.tr,
                       onPressed: () {
-                        controller.goToVeryfiyCode();
+                        controller.checkemail();
                       }),
                 ],
               ),

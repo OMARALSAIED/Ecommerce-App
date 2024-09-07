@@ -11,8 +11,7 @@ class Approutes {
   static const String verifiyCodeSignUp = '/verifiyCodeSignUp';
   static const String testView = '/testview';
   static const String test = '/test';
-<<<<<<< HEAD
+
   static const String home = '/home';
-=======
->>>>>>> 280f663fe86c80d1942237ce889a3f7ea71dd254
+
 }

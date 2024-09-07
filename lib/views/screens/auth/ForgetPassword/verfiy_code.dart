@@ -1,5 +1,5 @@
 
-import 'package:ecommerce/controller/auth/verfiy_Controller.dart';
+import 'package:ecommerce/controller/FotgetPassword/verfiy_Controller.dart';
 import 'package:ecommerce/core/constant/colors.dart';
 import 'package:ecommerce/core/constant/styles.dart';
 import 'package:flutter/material.dart';
@@ -58,7 +58,7 @@ class VerfiyCode extends StatelessWidget {
                   },
                   //runs when every textfield is filled
                   onSubmit: (String verificationCode) {
-                    controller.goToResetpassword();
+                    controller.goToResetpassword(verificationCode);
                   }, // end onSubmit
                 ),
                 const SizedBox(
