@@ -4,6 +4,7 @@ import 'package:ecommerce/core/functions/handling_data_controller.dart';
 import 'package:ecommerce/data/data_source/remote/Forgetpassword/resetpassword_data.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 abstract class ResetPasswordController extends GetxController {
@@ -12,8 +13,9 @@ abstract class ResetPasswordController extends GetxController {
 }
 
 class ResetPasswordControlleriImp extends ResetPasswordController {
+  GlobalKey<FormState> formState = GlobalKey<FormState>();
   ResetpasswordData resetpasswordData = ResetpasswordData(Get.find());
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest=StatusRequest.inital;
   late TextEditingController newPassword;
   late TextEditingController rePassword;
 
@@ -31,7 +33,8 @@ class ResetPasswordControlleriImp extends ResetPasswordController {
     statusRequest = StatusRequest.loading;
 
     var response = await resetpasswordData.postData(
-      email!,newPassword.text,
+      email!,
+      newPassword.text,
     );
     print("==================$response");
     statusRequest = handlingData(response);
@@ -41,9 +44,7 @@ class ResetPasswordControlleriImp extends ResetPasswordController {
       if (response['status'] == "success") {
         Get.offNamed(Approutes.successresetpassword);
       } else {
-        Get.defaultDialog(
-            title: "Warning",
-            middleText: "Try Again");
+        Get.defaultDialog(title: "Warning", middleText: "Try Again");
         statusRequest = StatusRequest.failuer;
       }
     }
@@ -53,7 +54,11 @@ class ResetPasswordControlleriImp extends ResetPasswordController {
 
   @override
   void onInit() {
-    email = Get.arguments['email'];
+    email = Get.arguments['email']; // التأكد من تمرير البريد الإلكتروني
+    if (email == null) {
+      print(
+          "Error: email is null"); // التحقق من أن البريد الإلكتروني يتم تمريره
+    }
     newPassword = TextEditingController();
     rePassword = TextEditingController();
     super.onInit();

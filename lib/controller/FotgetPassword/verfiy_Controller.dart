@@ -6,11 +6,10 @@ import 'package:get/get.dart';
 
 abstract class VerfiyCodeController extends GetxController {
   checkCode();
-  goToResetpassword(String verfiyCode );
+  goToResetpassword(verfiyCode);
 }
 
 class VerfiyCodeControlleriImp extends VerfiyCodeController {
-
   StatusRequest? statusRequest;
   String? email;
   String? verfiyCode;
@@ -24,31 +23,33 @@ class VerfiyCodeControlleriImp extends VerfiyCodeController {
   checkCode() {}
 
   @override
-  goToResetpassword(verfiyCode)async {
-     statusRequest = StatusRequest.loading;
+  goToResetpassword(verfiyCode) async {
+    statusRequest = StatusRequest.loading;
     update();
-
-    var response = await verifiyForgetData.postData(email!, verfiyCode);
+      print("Email: $email, Verfiy Code: $verfiyCode");
+    var response = await verifiyForgetData.postData( verfiyCode,email!);
     print("==================$response");
 
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
-        Get.offNamed(Approutes.resetpassword,arguments: {"email":email});
+        Get.offNamed(Approutes.resetpassword, arguments: {"email": email});
       } else {
         Get.defaultDialog(
-            title: "Warning",
-            middleText: "Warning phone number or email already exists");
+            title: "Warning", middleText: "Warning  Verifiy Code wronge");
         statusRequest = StatusRequest.failuer;
       }
     }
     update();
   }
-  
 
   @override
   void onInit() {
     email = Get.arguments['email'];
+    print("Email stored is $email"); // التأكد من تمرير البريد الإلكتروني
+    if (email == null) {
+      print("Error: email is null"); // التحقق من أن البريد الإلكتروني ليس null
+    }
     super.onInit();
   }
 }

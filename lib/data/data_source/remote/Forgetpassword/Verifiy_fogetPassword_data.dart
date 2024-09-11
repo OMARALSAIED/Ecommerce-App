@@ -7,7 +7,9 @@ class VerifiyForgetData {
   VerifiyForgetData(this.crud);
 
   postData(String verifiy,String email) async {
+    print("Sending POST request with email: $email and verify code: $verifiy");
     var response = await crud.postData(AppLink.verifiyCodeforgetpass, 
+    
     {
       
       "email":email,

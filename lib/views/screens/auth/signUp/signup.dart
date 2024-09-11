@@ -1,4 +1,5 @@
 import 'package:ecommerce/controller/auth/signup_Controller.dart';
+import 'package:ecommerce/core/classes/handling_data_view.dart';
 
 import 'package:ecommerce/core/constant/colors.dart';
 import 'package:ecommerce/core/constant/styles.dart';
@@ -29,7 +30,7 @@ class Signup extends StatelessWidget {
         ),
       ),
       body: GetBuilder<SignupControllerImp>(
-        builder: (controller) => Container(
+        builder: (controller) => HandlingDataRequest(statusRequest: controller.statusRequest, widget: Container(
           padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
           child: Form(
             key: controller.formstate,
@@ -78,7 +79,7 @@ class Signup extends StatelessWidget {
                   const SizedBox(height: 10),
                   AppTextFormField(
                     isNumber: false,
-                    controller: controller.password,
+                    controller: controller.password_user,
                     hinttext: 'Password',
                     validator: (val) => validInput(val!, 5, 100, "password"),
                     suffixIcon: const Icon(Icons.lock_outline),
@@ -100,7 +101,7 @@ class Signup extends StatelessWidget {
               ),
             ),
           ),
-        ),
+        ),)
       ),
     );
   }

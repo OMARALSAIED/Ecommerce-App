@@ -1,4 +1,5 @@
 import 'package:ecommerce/controller/FotgetPassword/reset_password_controller.dart';
+import 'package:ecommerce/core/classes/handling_data_view.dart';
 import 'package:ecommerce/core/constant/colors.dart';
 import 'package:ecommerce/core/constant/styles.dart';
 import 'package:ecommerce/views/widgets/auth/Custom_button.dart';
@@ -25,55 +26,58 @@ class ResetPassword extends StatelessWidget {
             style: Styles.textstyle17Bold.copyWith(color: Colors.grey),
           ),
         ),
-        body: Container(
+        body:GetBuilder<ResetPasswordControlleriImp>(builder: (controller) => HandlingDataRequest(statusRequest: controller.statusRequest, widget:  Container(
             padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-            child: ListView(
-              children: [
-               Text(
-                  '35'.tr,
-                  textAlign: TextAlign.center,
-                  style: Styles.textstyle25Bold,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 25),
-                  child: Text(
+            child: Form(
+              key: controller.formState,
+              child: ListView(
+                children: [
+                 Text(
                     '35'.tr,
                     textAlign: TextAlign.center,
-                    style: Styles.textstyle13.copyWith(color: APPColors.gery),
+                    style: Styles.textstyle25Bold,
                   ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                AppTextFormField(
-                  isNumber: false,
-                  controller: controller.newPassword,
-                  hinttext: '34'.tr,
-                  validator: (val) {},
-                  suffixIcon: const Icon(Icons.lock_outline),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                AppTextFormField(
-                  isNumber: false,
-                  controller: controller.rePassword,
-                  hinttext: '42'.tr,
-                  validator: (val) {},
-                  suffixIcon: const Icon(Icons.lock_outline),
-                ),
-                const SizedBox(
-                  height: 40,
-                ),
-                CustomButtonAuth(
-                    text: '33'.tr,
-                    onPressed: () {
-                      controller.goToSuccessResetPassword();
-                    }),
-              ],
-            )));
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 25),
+                    child: Text(
+                      '35'.tr,
+                      textAlign: TextAlign.center,
+                      style: Styles.textstyle13.copyWith(color: APPColors.gery),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  AppTextFormField(
+                    isNumber: false,
+                    controller: controller.newPassword,
+                    hinttext: '34'.tr,
+                    validator: (val) {},
+                    suffixIcon: const Icon(Icons.lock_outline),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  AppTextFormField(
+                    isNumber: false,
+                    controller: controller.rePassword,
+                    hinttext: '42'.tr,
+                    validator: (val) {},
+                    suffixIcon: const Icon(Icons.lock_outline),
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  CustomButtonAuth(
+                      text: '33'.tr,
+                      onPressed: () {
+                        controller.resetPassword();
+                      }),
+                ],
+              ),
+            ))),));
   }
 }

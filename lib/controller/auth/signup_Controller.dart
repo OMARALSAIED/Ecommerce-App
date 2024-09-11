@@ -19,7 +19,7 @@ class SignupControllerImp extends SignupController {
   late TextEditingController username;
   late TextEditingController email;
   late TextEditingController phone;
-  late TextEditingController password;
+  late TextEditingController password_user;
 
   StatusRequest statusRequest = StatusRequest.inital; // دمج الاختلافات بشكل صحيح
 
@@ -32,14 +32,14 @@ class SignupControllerImp extends SignupController {
       update(); // تحديث حالة التطبيق لعرض حالة التحميل
 
       var response = await signupData.postData(
-          username.text, password.text, email.text, phone.text);
+          username.text, password_user.text, email.text, phone.text);
       print("==================$response");
 
       statusRequest = handlingData(response);
       if (StatusRequest.success == statusRequest) {
         // إذا كانت البيانات الراجعة صحيحة
         if (response['status'] == "success") {
-          data.addAll(response['data']);
+          
           Get.offNamed(Approutes.verifiyCodeSignUp, arguments: {"email": email.text});
         } else {
           Get.defaultDialog(
@@ -65,7 +65,7 @@ class SignupControllerImp extends SignupController {
     username = TextEditingController();
     email = TextEditingController();
     phone = TextEditingController();
-    password = TextEditingController();
+    password_user = TextEditingController();
     super.onInit();
   }
 
@@ -74,7 +74,7 @@ class SignupControllerImp extends SignupController {
     username.dispose();
     email.dispose();
     phone.dispose();
-    password.dispose();
+    password_user.dispose();
     super.dispose();
   }
 }

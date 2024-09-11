@@ -1,11 +1,12 @@
 class AppLink {
   static const String baseUrl = "http://10.0.2.2/ecommerce";
 
-  // مسار التوثيق
-  static const String authroot = "$baseUrl/auth";
+  static const String authroot = "http://10.0.2.2/ecommerce/auth";
 
-  // مسار نسيان كلمة المرور
-  static const String forgetroot = '$baseUrl/forgetpassword';
+  static const String forgetroot = 'http://10.0.2.2/ecommerce/forgetpassword';
+
+
+
 
   static const String test = "$baseUrl/test1.php";
 

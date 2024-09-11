@@ -1,4 +1,6 @@
 import 'package:ecommerce/controller/auth/login_controller.dart';
+
+import 'package:ecommerce/core/classes/handling_data_view.dart';
 import 'package:ecommerce/core/constant/colors.dart';
 import 'package:ecommerce/core/constant/styles.dart';
 import 'package:ecommerce/core/functions/alertexit_App.dart';
@@ -34,7 +36,9 @@ class _LoginState extends State<Login> {
         ),
         body: WillPopScope(
             onWillPop: alertEixtApp,
-            child: Container(
+            child: GetBuilder<LoginControllerImp>(builder: (controller)=>
+            
+            HandlingDataRequest(statusRequest: controller.statusRequest!, widget:  Container(
                 padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 child: Form(
                   key: controller.formState,
@@ -119,6 +123,7 @@ class _LoginState extends State<Login> {
                       ),
                     ],
                   ),
-                ))));
+                )),)
+           )));
   }
 }

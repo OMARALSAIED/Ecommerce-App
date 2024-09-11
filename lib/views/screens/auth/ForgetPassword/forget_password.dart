@@ -1,4 +1,5 @@
 import 'package:ecommerce/controller/FotgetPassword/forget_password_controller.dart';
+import 'package:ecommerce/core/classes/handling_data_view.dart';
 import 'package:ecommerce/core/constant/colors.dart';
 import 'package:ecommerce/core/constant/styles.dart';
 import 'package:ecommerce/core/functions/vaild_Input.dart';
@@ -24,7 +25,7 @@ class ForgetPassword extends StatelessWidget {
             style: Styles.textstyle17Bold.copyWith(color: Colors.grey),
           ),
         ),
-        body: Container(
+        body: GetBuilder<ForgetPasswordControllerImp>(builder: (controller) => HandlingDataRequest(statusRequest: controller.statusRequest, widget: Container(
             padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
             child: Form(
               key: controller.formstat,
@@ -68,6 +69,6 @@ class ForgetPassword extends StatelessWidget {
                       }),
                 ],
               ),
-            )));
+            ))),));
   }
 }

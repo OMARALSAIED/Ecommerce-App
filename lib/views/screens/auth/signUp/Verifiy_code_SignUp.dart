@@ -12,7 +12,7 @@ class VerifiyCodeSignup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Initialize the controller
-    VerfiyCodeControllerSignUpiImp controller = Get.put(VerfiyCodeControllerSignUpiImp());
+    VerfiyCodeControlleriImp controller = Get.put(VerfiyCodeControlleriImp());
 
     return Scaffold(
       appBar: AppBar(
@@ -24,47 +24,41 @@ class VerifiyCodeSignup extends StatelessWidget {
           style: Styles.textstyle17Bold.copyWith(color: Colors.grey),
         ),
       ),
-      body: GetBuilder<VerfiyCodeControllerSignUpiImp>(
-        builder: (controller) => 
-          controller.statusRequest == StatusRequest.loading
-          ? Center(child: Text("Loading ..."))
-          : Container(
-              padding:const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
-              child: ListView(
-                children: [
-                  Text(
-                    '40'.tr,
-                    textAlign: TextAlign.center,
-                    style: Styles.textstyle25Bold,
-                  ),
-                  const SizedBox(height: 10),
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 25),
-                    child: Text(
-                      '41'.tr,
-                      textAlign: TextAlign.center,
-                      style: Styles.textstyle13.copyWith(color: APPColors.gery),
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  OtpTextField(
-                    fieldWidth: 50,
-                    borderRadius: BorderRadius.circular(15),
-                    numberOfFields: 5,
-                    borderColor:const
-                     Color(0xFF512DA8),
-                    showFieldAsBox: true,
-                    onCodeChanged: (String code) {
-                      // Handle validation or checks here
-                    },
-                    onSubmit: (String verificationCode) {
-                      controller.goToSuccessSignUp();
-                    },
-                  ),
-                  const SizedBox(height: 40),
-                ],
+      body: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+        child: ListView(
+          children: [
+            Text(
+              '40'.tr,
+              textAlign: TextAlign.center,
+              style: Styles.textstyle25Bold,
+            ),
+            const SizedBox(height: 10),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 25),
+              child: Text(
+                '41'.tr,
+                textAlign: TextAlign.center,
+                style: Styles.textstyle13.copyWith(color: APPColors.gery),
               ),
             ),
+            const SizedBox(height: 20),
+            OtpTextField(
+              fieldWidth: 50,
+              borderRadius: BorderRadius.circular(15),
+              numberOfFields: 5,
+              borderColor: const Color(0xFF512DA8),
+              showFieldAsBox: true,
+              onCodeChanged: (String code) {
+                // Handle validation or checks here
+              },
+              onSubmit: (String verfiyCode) {
+                controller.goToSuccessSignUp();
+              },
+            ),
+            const SizedBox(height: 40),
+          ],
+        ),
       ),
     );
   }

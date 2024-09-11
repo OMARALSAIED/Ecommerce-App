@@ -7,22 +7,20 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract class ForgetPasswordControllerController extends GetxController {
-  GlobalKey<FormState> formstat = GlobalKey<FormState>();
-
-  checkemail();
   
+  checkemail();
 }
 
 class ForgetPasswordControllerImp extends ForgetPasswordControllerController {
   CehckEmailData cehckEmailData = CehckEmailData(Get.find());
+  GlobalKey<FormState> formstat = GlobalKey<FormState>();
 
-  StatusRequest? statusRequest;
+
+  StatusRequest statusRequest=StatusRequest.inital;
   late TextEditingController email;
 
   @override
   ForgetPasswordControllerImp() {}
-
- 
 
   @override
   checkemail() async {
@@ -43,9 +41,6 @@ class ForgetPasswordControllerImp extends ForgetPasswordControllerController {
         }
       }
       update();
-      print('Data valid');
-    } else {
-      print('Data not valid');
     }
   }
 
@@ -62,16 +57,4 @@ class ForgetPasswordControllerImp extends ForgetPasswordControllerController {
 
     super.dispose();
   }
-
-
-  //  @override
-  // goToVeryfiyCode() {
-  //   var formdata = formstat.currentState;
-  //   if (formdata!.validate()) {
-  //     print('Data vaild');
-  //     Get.toNamed(Approutes.verfiycode);
-  //   } else {
-  //     print('Data not vaild');
-  //   }
-  // }
 }
