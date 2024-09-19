@@ -1,11 +1,13 @@
 import 'package:ecommerce/core/classes/Status_Request.dart';
 import 'package:ecommerce/core/constant/routes_name.dart';
 import 'package:ecommerce/core/functions/handling_data_controller.dart';
+import 'package:ecommerce/core/services/services.dart';
 import 'package:ecommerce/data/data_source/remote/auth/login_data.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/get_core.dart';
 
 abstract class LoginController extends GetxController {
   GlobalKey<FormState> formState = GlobalKey<FormState>();
@@ -21,6 +23,8 @@ class LoginControllerImp extends LoginController {
   late TextEditingController email;
   late TextEditingController password;
 
+  MyServices myServices = Get.find();
+
   @override
   login() async {
     var formdata = formState.currentState;
@@ -35,6 +39,16 @@ class LoginControllerImp extends LoginController {
       if (StatusRequest.success == statusRequest) {
         // اذا كانت البيانات الراجعة صحيحة اعرضها
         if (response['status'] == "success") {
+          myServices.sharedPreferences
+              .setInt('userID', response['user_data']['userID']);
+          myServices.sharedPreferences
+              .setString('username', response['user_data']['username']);
+          myServices.sharedPreferences
+              .setString('email', response['user_data']['email']);
+          myServices.sharedPreferences
+              .setString('phone', response['user_data']['phone']);
+               myServices.sharedPreferences
+              .setString('step','2');
           Get.offNamed(Approutes.home);
         } else {
           Get.defaultDialog(
