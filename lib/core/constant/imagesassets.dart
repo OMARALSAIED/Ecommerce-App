@@ -16,4 +16,9 @@ class AppImagesassets {
   static const String progress = '$rootlottie/procress.json';
   static const String servererror404 = '$rootlottie/servererror404.json';
   static const String noData = '$rootlottie/nodata.json';
+
+  //=============items==========//
+  static const String dress= '$rootImages/dress.png';
+   static const String lap = '$rootImages/lap.jpg';
+    static const String camera= '$rootImages/camera.jpg';
 }

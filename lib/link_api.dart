@@ -5,8 +5,11 @@ class AppLink {
 
   static const String forgetroot = 'http://10.0.2.2/ecommerce/forgetpassword';
 
+//==============================Image============================//
+  static const String imageroot = 'http://10.0.2.2/ecommerce/items';
 
-
+  static const String imageItems = '$imageroot/images';
+  static const String ImageCategories = '';
 
   static const String test = "$baseUrl/test1.php";
 
@@ -16,6 +19,15 @@ class AppLink {
 
   //==============================ForgetPassword========================//
   static const String chcekemail = "$forgetroot/chcekemail.php";
-  static const String verifiyCodeforgetpass = "$forgetroot/verifiyCodeforgetpass.php";
+  static const String verifiyCodeforgetpass =
+      "$forgetroot/verifiyCodeforgetpass.php";
   static const String resetpassword = '$forgetroot/resetpassword.php';
+
+  //===============================Home========================//
+
+  static const String home = '$baseUrl/items/home.php';
+
+  //================= Facke Ecommerce===========//
+
+  static const String product = 'https://api.escuelajs.co/api/v1/products';
 }

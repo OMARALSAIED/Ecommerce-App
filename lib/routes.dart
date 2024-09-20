@@ -47,7 +47,7 @@ List<GetPage<dynamic>>? routes = [
       name: Approutes.testView, page: () => const TestView()),
 
          GetPage(
-      name: Approutes.home, page: () => const HomePage()),
+      name: Approutes.home, page: () =>  HomePage()),
 
 ];
 
