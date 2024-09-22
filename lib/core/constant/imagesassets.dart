@@ -19,6 +19,6 @@ class AppImagesassets {
 
   //=============items==========//
   static const String dress= '$rootImages/dress.png';
-   static const String lap = '$rootImages/lap.jpg';
+   static const String lap = '$rootImages/l.png';
     static const String camera= '$rootImages/camera.jpg';
 }

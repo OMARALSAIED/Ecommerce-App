@@ -12,14 +12,14 @@ abstract class HomeController extends GetxController {
 }
 
 class HomeControllerImp extends HomeController {
- 
   MyServices myServices = Get.find();
- 
+
   late StatusRequest statusRequest;
 
-  late HomeData homeData=HomeData(Get.find());
+  late HomeData homeData = HomeData(Get.find());
 
   List catgeories = [];
+  List items = [];
   String? username;
   int? userid;
 
@@ -38,7 +38,8 @@ class HomeControllerImp extends HomeController {
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
-         catgeories.addAll(response['categoies']);
+        catgeories.addAll(response['categoies']);
+        items.addAll(response['items']);
       } else {
         statusRequest = StatusRequest.failuer;
       }
@@ -48,11 +49,8 @@ class HomeControllerImp extends HomeController {
 
   @override
   void onInit() {
-    
     initialData();
     getdata();
     super.onInit();
   }
 }
-
-

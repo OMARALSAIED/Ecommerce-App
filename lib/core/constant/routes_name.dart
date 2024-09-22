@@ -13,5 +13,6 @@ class Approutes {
   static const String test = '/test';
 
   static const String home = '/home';
+  static const String homescreen = '/homescreen';
 
 }
