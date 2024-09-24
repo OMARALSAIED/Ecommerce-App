@@ -3,8 +3,8 @@ import 'package:ecommerce/data/models/catgeories_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CustomcategoiresListView extends GetView<HomeControllerImp> {
-  const CustomcategoiresListView({
+class CustomcategoiresListViewItems extends GetView<HomeControllerImp> {
+  const CustomcategoiresListViewItems({
     super.key,
   });
 
@@ -37,7 +37,7 @@ class Categories extends GetView<HomeControllerImp> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        controller.goToitems(controller.catgeories,i!);
+        // controller.goToitems(controller.catgeories,i!);
       },
       child: Container(
           alignment: Alignment.center,

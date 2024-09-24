@@ -37,20 +37,22 @@ class ItemsHome extends StatelessWidget {
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           margin: EdgeInsets.symmetric(horizontal: 10),
-          height: 100,
           width: 150,
           child: Image.asset(
               height: 100, width: 150, fit: BoxFit.fill, AppImagesassets.lap),
         ),
-        Container(
-          decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.3),
-              borderRadius: BorderRadius.circular(20)),
-          height: 120,
-          width: 160,
+        Padding(
+          padding: const EdgeInsets.only(left: 8),
+          child: Container(
+            decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.3),
+                borderRadius: BorderRadius.circular(20)),
+            height: 150,
+            width: 200,
+          ),
         ),
         Positioned(
-            left: 10,
+            left: 24,
             child: Text(
               "${itemsModel.itemNameEn}",
               style: const TextStyle(

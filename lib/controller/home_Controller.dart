@@ -1,6 +1,7 @@
 import 'dart:collection';
 
 import 'package:ecommerce/core/classes/Status_Request.dart';
+import 'package:ecommerce/core/constant/routes_name.dart';
 import 'package:ecommerce/core/functions/handling_data_controller.dart';
 import 'package:ecommerce/core/services/services.dart';
 import 'package:ecommerce/data/data_source/remote/home_data.dart';
@@ -9,6 +10,7 @@ import 'package:get/get.dart';
 abstract class HomeController extends GetxController {
   initialData();
   getdata();
+  goToitems(List catgeoires,int selectedcat );
 }
 
 class HomeControllerImp extends HomeController {
@@ -45,6 +47,14 @@ class HomeControllerImp extends HomeController {
       }
     }
     update();
+  }
+
+  @override
+  goToitems( catgeories,selectedcat) {
+    Get.toNamed(Approutes.items, arguments: {
+      "catgeoies":catgeories,
+      "selectedcat":selectedcat
+    });
   }
 
   @override

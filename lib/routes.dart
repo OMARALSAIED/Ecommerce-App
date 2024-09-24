@@ -5,6 +5,7 @@ import 'package:ecommerce/test_view.dart';
 
 import 'package:ecommerce/views/screens/Home/home.dart';
 import 'package:ecommerce/views/screens/Home/home_screen.dart';
+import 'package:ecommerce/views/screens/Home/items.dart';
 
 import 'package:ecommerce/views/screens/auth/ForgetPassword/forget_password.dart';
 
@@ -51,6 +52,9 @@ List<GetPage<dynamic>>? routes = [
       name: Approutes.home, page: () =>  HomePage()),
          GetPage(
       name: Approutes.homescreen, page: () =>  HomeScreen()),
+       GetPage(
+      name: Approutes.items, page: () =>  Items()),
+
 
 
 ];
