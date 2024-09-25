@@ -47,7 +47,7 @@ class Categories extends GetView<HomeControllerImp> {
           height: 90,
           width: 90,
           child: Text(
-            "${catgeoriesModel.categoiesNameAr}",
+            "${catgeoriesModel.categoiesNameEn}",
             style: const TextStyle(fontSize: 18, color: Colors.white),
           )),
     );
