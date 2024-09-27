@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
                   widget: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 15),
                       child: ListView(
-                        children: const [
+                        children:  [
                           // شريط البحث
                    CustomAppbar(
                             hinttext: "Find Product",
@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
                             subtitle: "Casback 20",
                           ),
                           CustomTitleHome(
-                            title: "Categories",
+                            title: "43".tr,
                           ),
                           SizedBox(
                             height: 10,
@@ -48,7 +48,7 @@ class HomePage extends StatelessWidget {
 
                           // عنوان منتجات مخصصة لك
                           CustomTitleHome(
-                            title: "Product for you",
+                            title: "44".tr,
                           ),
 
                           SizedBox(
@@ -59,7 +59,7 @@ class HomePage extends StatelessWidget {
                           ListItemsView(),
 
                           CustomTitleHome(
-                            title: "Offers",
+                            title: "45".tr,
                           ),
                           SizedBox(
                             height: 10,

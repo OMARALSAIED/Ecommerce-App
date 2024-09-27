@@ -47,7 +47,10 @@ class MyTranslation extends Translations {
           '39': 'رمز التحقق',
           '40': 'تحقق من الرمز',
           '41': 'الرجاء إدخال رمز التحقق الذي تم إرساله للبريد الإلكتروني',
-          '42': 'الرجاء إعادة كتابة كلمة المرور'
+          '42': 'الرجاء إعادة كتابة كلمة المرور',
+          '43':'ألاقسام',
+          '44':'منتج من أجلك',
+          '45':'العروض'
         },
         'en': {
           '1': 'Choose Language',
@@ -94,7 +97,10 @@ class MyTranslation extends Translations {
           '39': 'Verification Code',
           '40': 'Check Code',
           '41': 'Please Enter The Digit Code Sent To',
-          '42': 'Please Re wirte Password '
+          '42': 'Please Re wirte Password ',
+          '43':'Categories',
+          '44':'Product for you',
+          '45':'Offers'
         }
       };
 }

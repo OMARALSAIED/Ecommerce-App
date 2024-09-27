@@ -15,42 +15,39 @@ class Items extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(ItemsControllerImp());
     return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.all(15),
-        child: GetBuilder<ItemsControllerImp>(
-            builder: (controller) => HandlingDataView(
-                  statusRequest: controller.statusRequest,
-                  widget: ListView(
-                    children: [
-                      CustomAppbar(
-                        hinttext: "Find Product",
-                        prefixicon: const Icon(Icons.search),
-                        secicon: Icons.notifications_active_outlined,
-                        onpressedicon: () {},
-                        ontapSearch: () {},
-                      ),
-                      const SizedBox(
-                        height: 24,
-                      ),
-                      const CustomcategoiresListViewItems(),
-                      GridView.builder(
-                        itemCount: controller.data.length,
-                        shrinkWrap: true,
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2, childAspectRatio: 0.7),
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemBuilder: (BuildContext context, index) {
-                          return CustomListItems(
-                            itemsModel:
-                                ItemsModel.fromJson(controller.data[index]),
-                          );
-                        },
-                      ),
-                    ],
-                  ),
-                )),
-      ),
-    );
+        body: Container(
+            padding: const EdgeInsets.all(15),
+            child: ListView(
+              children: [
+                CustomAppbar(
+                  hinttext: "Find Product",
+                  prefixicon: const Icon(Icons.search),
+                  secicon: Icons.notifications_active_outlined,
+                  onpressedicon: () {},
+                  ontapSearch: () {},
+                ),
+                const SizedBox(
+                  height: 24,
+                ),
+                const CustomcategoiresListViewItems(),
+                GetBuilder<ItemsControllerImp>(
+                    builder: (controller) => HandlingDataView(
+                        statusRequest: controller.statusRequest,
+                        widget: GridView.builder(
+                          itemCount: controller.data.length,
+                          shrinkWrap: true,
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 2, childAspectRatio: 0.7),
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemBuilder: (BuildContext context, index) {
+                            return CustomListItems(
+                              itemsModel:
+                                  ItemsModel.fromJson(controller.data[index]),
+                            );
+                          },
+                        ))),
+              ],
+            )));
   }
 }

@@ -24,9 +24,11 @@ import 'package:get/get.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 List<GetPage<dynamic>>? routes = [
-  GetPage(name:"/", page: () =>const  Language(),middlewares: [
-    MyMiddelwaer()
-  ]),
+  // GetPage(name:"/", page: () =>const  Language(),middlewares: [
+  //   MyMiddelwaer()
+  // ]),
+
+   GetPage(name: '/', page: () => const Language()),
 
 
   // GetPage(name: '/', page:()=> TestView()),

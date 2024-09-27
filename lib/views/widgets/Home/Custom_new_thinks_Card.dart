@@ -1,11 +1,15 @@
+import 'package:ecommerce/controller/home_Controller.dart';
 import 'package:ecommerce/core/constant/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class CustomNewThinksCard extends StatelessWidget {
+class CustomNewThinksCard extends GetView<HomeControllerImp> {
   final String title;
   final String subtitle;
   const CustomNewThinksCard({
-    super.key, required this.title, required this.subtitle,
+    super.key,
+    required this.title,
+    required this.subtitle,
   });
 
   @override
@@ -19,7 +23,7 @@ class CustomNewThinksCard extends StatelessWidget {
                   color: APPColors.primaryColor,
                   borderRadius: BorderRadiusDirectional.circular(20)),
               height: 150,
-              child:  ListTile(
+              child: ListTile(
                 title: Text(
                   "$title",
                   style: TextStyle(color: Colors.white, fontSize: 20),
@@ -31,7 +35,8 @@ class CustomNewThinksCard extends StatelessWidget {
               )),
           Positioned(
             top: -25,
-            right: -10,
+            left: controller.lang == 'ar' ? -30 : null,
+            right: controller.lang == 'en' ? -10 : null,
             child: Container(
               height: 160,
               width: 160,
