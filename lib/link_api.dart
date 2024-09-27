@@ -25,9 +25,11 @@ class AppLink {
 
   //===============================Home========================//
 
-  static const String home = '$baseUrl/items/home.php';
+  static const String home = '$baseUrl/home.php';
 
-  //================= Facke Ecommerce===========//
+  //================= Items Ecommerce===========//
 
-  static const String product = 'https://api.escuelajs.co/api/v1/products';
+  static const String items = '$imageroot/items.php';
+
+  // http://localhost/ecommerce/items/items.php
 }

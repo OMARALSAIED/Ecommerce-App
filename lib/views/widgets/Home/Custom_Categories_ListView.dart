@@ -21,8 +21,8 @@ class CustomcategoiresListView extends GetView<HomeControllerImp> {
             itemBuilder: (context, index) {
               return Categories(
                 catgeoriesModel:
-              
-                    CatgeoriesModel.fromJson(controller.catgeories[index]), i: index,
+                    CatgeoriesModel.fromJson(controller.catgeories[index]),
+                i: index,
               );
             }));
   }
@@ -31,13 +31,14 @@ class CustomcategoiresListView extends GetView<HomeControllerImp> {
 class Categories extends GetView<HomeControllerImp> {
   final CatgeoriesModel catgeoriesModel;
   final int i;
- Categories( {super.key, required this.catgeoriesModel,required this.i});
+  Categories({super.key, required this.catgeoriesModel, required this.i});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        controller.goToitems(controller.catgeories,i!);
+        controller.goToitems(
+            catgeoriesModel.categoiesID.toString(), controller.catgeories, i!);
       },
       child: Container(
           alignment: Alignment.center,
