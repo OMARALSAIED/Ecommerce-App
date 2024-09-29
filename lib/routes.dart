@@ -19,14 +19,15 @@ import 'package:ecommerce/views/screens/auth/signUp/success_signUp.dart';
 import 'package:ecommerce/views/screens/language.dart';
 
 import 'package:ecommerce/views/screens/onboarding.dart';
+import 'package:ecommerce/views/screens/productDeatiles.dart';
 import 'package:get/get.dart';
 
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 List<GetPage<dynamic>>? routes = [
-  // GetPage(name:"/", page: () =>const  Language(),middlewares: [
-  //   MyMiddelwaer()
-  // ]),
+  GetPage(name:"/", page: () =>const  Language(),middlewares: [
+    MyMiddelwaer()
+  ]),
 
    GetPage(name: '/', page: () => const Language()),
 
@@ -56,6 +57,9 @@ List<GetPage<dynamic>>? routes = [
       name: Approutes.homescreen, page: () =>  HomeScreen()),
        GetPage(
       name: Approutes.items, page: () =>  Items()),
+        GetPage(
+      name: Approutes.ProductDeatiled, page: () =>  Productdeatiles()),
+      
 
 
 

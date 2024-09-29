@@ -15,7 +15,7 @@ class AppImagesassets {
   static const String offline = '$rootlottie/offline.json';
   static const String progress = '$rootlottie/procress.json';
   static const String servererror404 = '$rootlottie/servererror404.json';
-  static const String noData = '$rootlottie/nodata.json';
+  static const String noData = '$rootlottie/nodatan.json';
 
   //=============items==========//
   static const String dress= '$rootImages/dress.png';

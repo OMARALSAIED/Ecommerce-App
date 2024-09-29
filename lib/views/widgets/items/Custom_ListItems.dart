@@ -1,9 +1,11 @@
+import 'package:ecommerce/controller/items_controller.dart';
 import 'package:ecommerce/core/constant/colors.dart';
 import 'package:ecommerce/core/constant/imagesassets.dart';
 import 'package:ecommerce/data/models/items_model.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class CustomListItems extends StatelessWidget {
+class CustomListItems extends GetView<ItemsControllerImp> {
   final ItemsModel itemsModel;
   const CustomListItems({
     super.key,
@@ -13,16 +15,22 @@ class CustomListItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: () {
+        controller.goToPageproductdeatiles(itemsModel);
+      },
       child: Card(
         child: Padding(
           padding: const EdgeInsets.all(10),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(
-                AppImagesassets.lap,
-                height: 100,
-                fit: BoxFit.fill,
+              Hero(
+                tag: "${itemsModel.itemID}",
+                child: Image.asset(
+                  AppImagesassets.lap,
+                  height: 100,
+                  fit: BoxFit.fill,
+                ),
               ),
               const SizedBox(
                 height: 10,
@@ -69,14 +77,14 @@ class CustomListItems extends StatelessWidget {
                 children: [
                   Text(
                     "${itemsModel.itemPrice} \$",
-                    style:const TextStyle(
+                    style: const TextStyle(
                         fontSize: 18,
                         color: APPColors.secondcolor,
                         fontWeight: FontWeight.bold),
                   ),
                   IconButton(
                       onPressed: () {},
-                      icon:const Icon(Icons.favorite_outline_outlined))
+                      icon: const Icon(Icons.favorite_outline_outlined))
                 ],
               )
             ],
