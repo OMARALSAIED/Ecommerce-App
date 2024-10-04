@@ -10,6 +10,24 @@ class ProductdeatilesControllerImp extends ProductdeatilesController {
     itemsModel = Get.arguments['itemsmodel'];
   }
 
+  List subitems = [
+    {
+      "name": "Red",
+      "id": 1,
+      "activ": "0",
+    },
+    {
+      "name": "Black",
+      "id": 1,
+      "activ": "0",
+    },
+    {
+      "name": "yllow",
+      "id": 1,
+      "activ": "1",
+    }
+  ];
+
   @override
   void onInit() {
     initalData();
