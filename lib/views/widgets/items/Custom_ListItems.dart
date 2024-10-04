@@ -6,8 +6,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CustomListItems extends GetView<ItemsControllerImp> {
+  final bool activ;
   final ItemsModel itemsModel;
-  const CustomListItems({
+  const CustomListItems( {
+    required this.activ,
     super.key,
     required this.itemsModel,
   });
@@ -84,7 +86,9 @@ class CustomListItems extends GetView<ItemsControllerImp> {
                   ),
                   IconButton(
                       onPressed: () {},
-                      icon: const Icon(Icons.favorite_outline_outlined))
+                      icon:  Icon(
+                        color: APPColors.secondcolor,
+                        activ ? Icons.favorite : Icons.favorite_outline_outlined))
                 ],
               )
             ],
