@@ -1,6 +1,7 @@
 import 'package:ecommerce/controller/productDeatiles_controller.dart';
 import 'package:ecommerce/core/constant/colors.dart';
 import 'package:ecommerce/core/constant/imagesassets.dart';
+import 'package:ecommerce/views/widgets/productdeatiels/price_and_counitiy.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -71,8 +72,17 @@ class Productdeatiles extends StatelessWidget {
                       color: Colors.black,
                       fontWeight: FontWeight.bold),
                 ),
-            const    SizedBox(
-                  height: 12,
+                const SizedBox(
+                  height: 32,
+                ),
+                PriceAndcounitiy(
+                  onPressedAdd: () {},
+                  onPressedremove: () {},
+                  price: "200",
+                  count: "2",
+                ),
+                const SizedBox(
+                  height: 24,
                 ),
                 const Text(
                   "laptop lenovo cor i7  gen 11 120 HR Storage 4T",

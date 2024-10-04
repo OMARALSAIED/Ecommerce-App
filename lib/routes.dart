@@ -29,7 +29,7 @@ List<GetPage<dynamic>>? routes = [
     MyMiddelwaer()
   ]),
 
-   GetPage(name: '/', page: () => const Language()),
+ 
 
 
   // GetPage(name: '/', page:()=> TestView()),
