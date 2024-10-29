@@ -1,4 +1,5 @@
 import 'package:ecommerce/core/functions/handling_data_controller.dart';
+import 'package:ecommerce/core/services/services.dart';
 import 'package:ecommerce/data/data_source/remote/items.dart';
 import 'package:ecommerce/data/models/items_model.dart';
 import 'package:get/get.dart';
@@ -20,6 +21,8 @@ class ItemsControllerImp extends ItemsController {
   int? selectedCat;
   ItemsData itemsData = ItemsData(Get.find());
   late StatusRequest statusRequest;
+
+  MyServices myServices = Get.find();
 
   @override
   void onInit() {
@@ -49,7 +52,9 @@ class ItemsControllerImp extends ItemsController {
     data.clear();
     statusRequest = StatusRequest.loading;
 
-    var response = await itemsData.getData(categoryid);
+    var response = await itemsData.getData(
+      categoryid,myServices.sharedPreferences.getInt("userID")!
+    );
     print("==================$response");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
@@ -62,7 +67,6 @@ class ItemsControllerImp extends ItemsController {
     }
     update();
   }
-
 
   @override
   goToPageproductdeatiles(itemsModel) {

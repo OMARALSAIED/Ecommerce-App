@@ -7,6 +7,7 @@ class ItemsModel {
   int? categoiesID;
   String? categoiesNameEn;
   String? categoryCreationDate;
+  int? favorite;
 
   ItemsModel(
       {this.itemID,
@@ -16,6 +17,7 @@ class ItemsModel {
       this.itemCreationDate,
       this.categoiesID,
       this.categoiesNameEn,
+      this.favorite,
       this.categoryCreationDate});
 
   ItemsModel.fromJson(Map<String, dynamic> json) {
@@ -26,6 +28,7 @@ class ItemsModel {
     itemCreationDate = json['item_creation_date'];
     categoiesID = json['categoies_ID'];
     categoiesNameEn = json['categoies_name_en'];
+     favorite = json['favorite'];
     categoryCreationDate = json['category_creation_date'];
   }
 
@@ -38,6 +41,7 @@ class ItemsModel {
     data['item_creation_date'] = this.itemCreationDate;
     data['categoies_ID'] = this.categoiesID;
     data['categoies_name_en'] = this.categoiesNameEn;
+    data['favorite'] = this.favorite;
     data['category_creation_date'] = this.categoryCreationDate;
     return data;
   }

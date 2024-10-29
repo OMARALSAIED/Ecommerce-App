@@ -42,7 +42,7 @@ class Items extends StatelessWidget {
                           physics: const NeverScrollableScrollPhysics(),
                           itemBuilder: (BuildContext context, index) {
                             return CustomListItems(
-                              activ: true,
+                              
                               itemsModel:
                                   ItemsModel.fromJson(controller.data[index]),
                             );
