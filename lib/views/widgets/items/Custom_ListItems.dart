@@ -1,3 +1,4 @@
+import 'package:ecommerce/controller/favorite_controller.dart';
 import 'package:ecommerce/controller/items_controller.dart';
 import 'package:ecommerce/core/constant/colors.dart';
 import 'package:ecommerce/core/constant/imagesassets.dart';
@@ -6,10 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CustomListItems extends GetView<ItemsControllerImp> {
-  
   final ItemsModel itemsModel;
   const CustomListItems({
-    
     super.key,
     required this.itemsModel,
   });
@@ -84,13 +83,21 @@ class CustomListItems extends GetView<ItemsControllerImp> {
                         color: APPColors.secondcolor,
                         fontWeight: FontWeight.bold),
                   ),
-                  IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                          color: APPColors.secondcolor,
-                         itemsModel.favorite==1
-                              ? Icons.favorite
-                              : Icons.favorite_outline_outlined))
+                  GetBuilder<FavoriteController>(
+                    builder: (controller) => IconButton(
+                        onPressed: () {
+                          if (controller.isFavorite[itemsModel.itemID] == 1) {
+                            controller.setFavorite(itemsModel.itemID, 0);
+                          } else {
+                            controller.setFavorite(itemsModel.itemID, 1);
+                          }
+                        },
+                        icon: Icon(
+                            color: APPColors.secondcolor,
+                            controller.isFavorite[itemsModel.itemID] == 1
+                                ? Icons.favorite
+                                : Icons.favorite_outline_outlined)),
+                  )
                 ],
               )
             ],
