@@ -14,7 +14,7 @@ class FavoriteData {
     print(response);
    return response.fold((l) => l, (r) => r);
   }
-  DeleteFavorite(String userid ,int itemid) async {
+  Removefavorite(String userid ,int itemid) async {
     var response = await crud.postData(AppLink.favoriteRemove, {
        "user_id":userid.toString(),
       "item_id":itemid.toString()

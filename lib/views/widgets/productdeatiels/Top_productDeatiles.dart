@@ -1,19 +1,19 @@
+import 'package:ecommerce/controller/home_Controller.dart';
 import 'package:ecommerce/controller/productDeatiles_controller.dart';
 import 'package:ecommerce/core/constant/colors.dart';
 import 'package:ecommerce/core/constant/imagesassets.dart';
 import 'package:ecommerce/views/widgets/productdeatiels/price_and_counitiy.dart';
 import 'package:ecommerce/views/widgets/productdeatiels/subitems_List.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_state_manager/src/simple/get_view.dart';
 
-class TopProductDeatiles extends StatelessWidget {
+class TopProductDeatiles extends GetView<HomeControllerImp> {
   const TopProductDeatiles({
     super.key,
-    required this.controller,
+    required this.controllerp,
   });
 
-  final ProductdeatilesControllerImp controller;
+  final ProductdeatilesControllerImp controllerp;
 
   @override
   Widget build(BuildContext context) {
@@ -30,11 +30,11 @@ class TopProductDeatiles extends StatelessWidget {
                       BorderRadius.vertical(bottom: Radius.circular(20))),
             ),
             Positioned(
-              top: 30.0,
-              right: Get.width / 15,
-              left: Get.height / 15,
+              top: 30,
+              left: controller.lang == 'ar' ? -30 : null,
+              right: controller.lang == 'en' ? -10 : null,
               child: Hero(
-                tag: "${controller.itemsModel.itemID}",
+                tag: "${controllerp.itemsModel.itemID}",
                 child: Image.asset(
                   height: 250,
                   AppImagesassets.lap,
@@ -49,10 +49,10 @@ class TopProductDeatiles extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: 24, top: 40),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                "${controller.itemsModel.itemNameEn}",
+                "${controllerp.itemsModel.itemNameEn}",
                 style: const TextStyle(
                     fontSize: 25,
                     color: Colors.black,
@@ -90,7 +90,7 @@ class TopProductDeatiles extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              SubitemsList(controller: controller)
+              SubitemsList(controller: controllerp)
             ],
           ),
         )

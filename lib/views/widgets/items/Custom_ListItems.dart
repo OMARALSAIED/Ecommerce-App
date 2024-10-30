@@ -85,18 +85,21 @@ class CustomListItems extends GetView<ItemsControllerImp> {
                   ),
                   GetBuilder<FavoriteController>(
                     builder: (controller) => IconButton(
-                        onPressed: () {
-                          if (controller.isFavorite[itemsModel.itemID] == 1) {
-                            controller.setFavorite(itemsModel.itemID, 0);
-                          } else {
-                            controller.setFavorite(itemsModel.itemID, 1);
-                          }
-                        },
-                        icon: Icon(
-                            color: APPColors.secondcolor,
-                            controller.isFavorite[itemsModel.itemID] == 1
-                                ? Icons.favorite
-                                : Icons.favorite_outline_outlined)),
+                      onPressed: () {
+                        if (controller.isFavorite[itemsModel.itemID] == 1) {
+                          controller.setFavorite(itemsModel.itemID, 0);
+                          controller.Removefavorite(itemsModel.itemID!);
+                        } else {
+                          controller.setFavorite(itemsModel.itemID, 1);
+
+                          controller.Addfavorite(itemsModel.itemID!);
+                        }
+                      },
+                      icon: Icon(controller.isFavorite[itemsModel.itemID] == 1
+                          ? Icons.favorite
+                          : Icons.favorite_outline_outlined),
+                      color: APPColors.secondcolor,
+                    ),
                   )
                 ],
               )

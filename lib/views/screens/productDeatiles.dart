@@ -1,9 +1,7 @@
 import 'package:ecommerce/controller/productDeatiles_controller.dart';
 import 'package:ecommerce/core/constant/colors.dart';
-import 'package:ecommerce/core/constant/imagesassets.dart';
+
 import 'package:ecommerce/views/widgets/productdeatiels/Top_productDeatiles.dart';
-import 'package:ecommerce/views/widgets/productdeatiels/price_and_counitiy.dart';
-import 'package:ecommerce/views/widgets/productdeatiels/subitems_List.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -26,14 +24,14 @@ class Productdeatiles extends StatelessWidget {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           color: APPColors.secondcolor,
           onPressed: () {},
-          child: Text(
+          child:const Text(
             "Add to Card",
             style: TextStyle(
                 color: APPColors.backgroundColor, fontWeight: FontWeight.bold),
           ),
         ),
       ),
-      body: TopProductDeatiles(controller: controller),
+      body: TopProductDeatiles(controllerp: controller),
     );
   }
 }
