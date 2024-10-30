@@ -32,4 +32,8 @@ class AppLink {
   static const String items = '$imageroot/items.php';
 
   // http://localhost/ecommerce/items/items.php
+
+  //==================Favorite======================
+  static const String favoriteAdd = '$baseUrl/Favorite/add.php';
+  static const String favoriteRemove = '$baseUrl/Favorite/remove.php';
 }
