@@ -18,7 +18,9 @@ class VerfiyCodeControlleriImp extends VerfiyCodeController {
 
   @override
   goToSuccessSignUp() {
-    Get.offNamed(Approutes.successSignUp);
+    Get.offNamed(Approutes.successSignUp
+     
+    );
   }
 
   @override

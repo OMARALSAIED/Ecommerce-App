@@ -1,6 +1,7 @@
 import 'package:ecommerce/controller/favorite_controller.dart';
 import 'package:ecommerce/controller/items_controller.dart';
 import 'package:ecommerce/core/classes/handling_data_view.dart';
+import 'package:ecommerce/core/constant/routes_name.dart';
 import 'package:ecommerce/data/models/items_model.dart';
 import 'package:ecommerce/views/widgets/Custom_App_bar.dart';
 import 'package:ecommerce/views/widgets/items/Custom_ListItems.dart';
@@ -22,7 +23,9 @@ class Items extends StatelessWidget {
             child: ListView(
               children: [
                 CustomAppbar(
-                  FavonPressed: (){},
+                  FavonPressed: () {
+                    Get.toNamed(Approutes.MyFavorite);
+                  },
                   hinttext: "Find Product",
                   prefixicon: const Icon(Icons.search),
                   secicon: Icons.notifications_active_outlined,
@@ -44,8 +47,9 @@ class Items extends StatelessWidget {
                                   crossAxisCount: 2, childAspectRatio: 0.7),
                           physics: const NeverScrollableScrollPhysics(),
                           itemBuilder: (BuildContext context, index) {
-                            favoriteController
-                                .isFavorite[controller.data[index]['item_ID']]=controller.data[index]['favorite'];
+                            favoriteController.isFavorite[controller.data[index]
+                                    ['item_ID']] =
+                                controller.data[index]['favorite'];
                             return CustomListItems(
                               itemsModel:
                                   ItemsModel.fromJson(controller.data[index]),

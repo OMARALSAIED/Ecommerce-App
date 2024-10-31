@@ -1,4 +1,5 @@
 import 'package:ecommerce/controller/auth/Verifiy_Code_SignUp.dart';
+import 'package:ecommerce/controller/auth/login_controller.dart';
 import 'package:ecommerce/core/classes/Status_Request.dart';
 import 'package:ecommerce/core/constant/colors.dart';
 import 'package:ecommerce/core/constant/styles.dart';
@@ -13,7 +14,7 @@ class VerifiyCodeSignup extends StatelessWidget {
   Widget build(BuildContext context) {
     // Initialize the controller
     VerfiyCodeControlleriImp controller = Get.put(VerfiyCodeControlleriImp());
-
+    LoginControllerImp controllerImpLogin = Get.put(LoginControllerImp());
     return Scaffold(
       appBar: AppBar(
         backgroundColor: APPColors.backgroundColor,
@@ -35,9 +36,9 @@ class VerifiyCodeSignup extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 25),
+              margin: EdgeInsets.symmetric(horizontal: 25),
               child: Text(
-                '41'.tr,
+                'Please Enter The Digit Code Sent To Your Email',
                 textAlign: TextAlign.center,
                 style: Styles.textstyle13.copyWith(color: APPColors.gery),
               ),

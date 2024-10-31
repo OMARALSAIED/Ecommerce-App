@@ -39,6 +39,18 @@ class MYFavoriteController extends GetxController {
     update();
   }
 
+  DleteData(String favoriteid) {
+    data.clear();
+
+    var response = myfavoriteData.DleteData(favoriteid);
+    print("==================$response");
+
+    data.removeWhere((element) => element.itemId == favoriteid);
+
+    print(data);
+    update();
+  }
+
   @override
   void onInit() {
     getData();

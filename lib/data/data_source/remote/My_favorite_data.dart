@@ -11,4 +11,11 @@ class MyFavoriteData {
     print(response);
    return response.fold((l) => l, (r) => r);
   }
+
+
+   DleteData(String id) async {
+    var response = await crud.postData(AppLink.Myfavoritedelete, {"id":id});
+    print(response);
+   return response.fold((l) => l, (r) => r);
+  }
 }

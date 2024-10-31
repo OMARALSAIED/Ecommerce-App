@@ -1,9 +1,11 @@
+import 'package:ecommerce/controller/my_favorite_controller.dart';
 import 'package:ecommerce/core/constant/colors.dart';
 import 'package:ecommerce/core/constant/imagesassets.dart';
 import 'package:ecommerce/data/models/My_FavoriteModel.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class CustomListMyFavoriteItems extends StatelessWidget {
+class CustomListMyFavoriteItems extends GetView<MYFavoriteController> {
   final myFavoriteModel itemsModel;
   const CustomListMyFavoriteItems({
     super.key,
@@ -81,7 +83,9 @@ class CustomListMyFavoriteItems extends StatelessWidget {
                         fontWeight: FontWeight.bold),
                   ),
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        controller.DleteData(itemsModel.favoriteId.toString());
+                      },
                       icon: Icon(
                         Icons.delete,
                         color: APPColors.secondcolor,
