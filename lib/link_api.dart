@@ -36,4 +36,5 @@ class AppLink {
   //==================Favorite======================
   static const String favoriteAdd = '$baseUrl/Favorite/add.php';
   static const String favoriteRemove = '$baseUrl/Favorite/remove.php';
+  static const String MyfavoriteView = '$baseUrl/Favorite/view.php';
 }
