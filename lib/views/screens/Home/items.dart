@@ -22,6 +22,7 @@ class Items extends StatelessWidget {
             child: ListView(
               children: [
                 CustomAppbar(
+                  FavonPressed: (){},
                   hinttext: "Find Product",
                   prefixicon: const Icon(Icons.search),
                   secicon: Icons.notifications_active_outlined,

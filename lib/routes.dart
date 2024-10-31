@@ -6,6 +6,7 @@ import 'package:ecommerce/test_view.dart';
 import 'package:ecommerce/views/screens/Home/home.dart';
 import 'package:ecommerce/views/screens/Home/home_screen.dart';
 import 'package:ecommerce/views/screens/Home/items.dart';
+import 'package:ecommerce/views/screens/My_Favorite.dart';
 
 import 'package:ecommerce/views/screens/auth/ForgetPassword/forget_password.dart';
 
@@ -59,6 +60,8 @@ List<GetPage<dynamic>>? routes = [
       name: Approutes.items, page: () =>  Items()),
         GetPage(
       name: Approutes.ProductDeatiled, page: () =>  Productdeatiles()),
+
+      GetPage(name: Approutes.MyFavorite, page:()=>MyFavorite() )
       
 
 
