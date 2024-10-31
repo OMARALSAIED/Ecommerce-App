@@ -9,21 +9,15 @@ class PriceAndcounitiy extends StatelessWidget {
   const PriceAndcounitiy({
     super.key,
     this.onPressedAdd,
-    this.onPressedremove, required this.price, required this.count,
+    this.onPressedremove,
+    required this.price,
+    required this.count,
   });
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12),
-          child:  Text(
-            "$price\$",
-            style: TextStyle(fontSize: 30, color: APPColors.secondcolor),
-          ),
-        ),
-        const Spacer(),
         Row(
           children: [
             IconButton(onPressed: onPressedAdd, icon: Icon(Icons.add)),
@@ -34,13 +28,20 @@ class PriceAndcounitiy extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   border: Border.all(color: Colors.black)),
-              child:  Text(
+              child: Text(
                 textAlign: TextAlign.center,
                 "$count",
                 style: TextStyle(fontSize: 20, color: APPColors.kgrey800),
               ),
             ),
             IconButton(onPressed: onPressedremove, icon: Icon(Icons.remove)),
+        const    SizedBox(
+              width: 120,
+            ),
+            Text(
+              "$price\$",
+              style: TextStyle(fontSize: 40, color: APPColors.secondcolor),
+            ),
           ],
         ),
       ],

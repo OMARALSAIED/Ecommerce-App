@@ -12,7 +12,7 @@ class SubitemsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+    return Row(mainAxisAlignment: MainAxisAlignment.start, children: [
       ...List.generate(
           controller.subitems.length,
           (index) => Container(

@@ -49,7 +49,7 @@ class TopProductDeatiles extends GetView<HomeControllerImp> {
         Padding(
           padding: const EdgeInsets.only(left: 24, top: 40),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 "${controllerp.itemsModel.itemNameEn}",
