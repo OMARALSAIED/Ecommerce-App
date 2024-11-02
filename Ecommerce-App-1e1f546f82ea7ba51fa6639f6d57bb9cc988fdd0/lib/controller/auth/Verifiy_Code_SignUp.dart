@@ -26,6 +26,12 @@ class VerfiyCodeControlleriImp extends VerfiyCodeController {
     super.onInit();
   }
 
+
+  Resend()
+  {
+     // verifiysingupData.resendData(email!);
+  }
+
   @override
   goToResetpassword() {
     // TODO: implement goToResetpassword

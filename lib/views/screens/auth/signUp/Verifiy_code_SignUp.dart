@@ -58,6 +58,14 @@ class VerifiyCodeSignup extends StatelessWidget {
               },
             ),
             const SizedBox(height: 40),
+            InkWell(
+              onTap: (){
+                 // controller.reSend();
+              },
+              child:const Center(child: Text("Resend",style: TextStyle(fontSize: 25,color: APPColors.secondcolor),),),
+            )
+
+            
           ],
         ),
       ),

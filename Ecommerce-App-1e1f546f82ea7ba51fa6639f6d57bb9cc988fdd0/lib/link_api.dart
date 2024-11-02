@@ -16,11 +16,13 @@ class AppLink {
   //==============================Auth========================//
   static const String signup = "$authroot/signup.php";
   static const String login = "$authroot/login.php";
+  static const String Resend = '$authroot/resend.php';
 
   //==============================ForgetPassword========================//
   static const String chcekemail = "$forgetroot/chcekemail.php";
   static const String verifiyCodeforgetpass =
       "$forgetroot/verifiyCodeforgetpass.php";
+  
   static const String resetpassword = '$forgetroot/resetpassword.php';
 
   //===============================Home========================//
@@ -37,5 +39,6 @@ class AppLink {
   static const String favoriteAdd = '$baseUrl/Favorite/add.php';
   static const String favoriteRemove = '$baseUrl/Favorite/remove.php';
   static const String MyfavoriteView = '$baseUrl/Favorite/view.php';
-  static const String MyfavoriteDelete = '$baseUrl/Favorite/deletemyfavorite.php';
+  static const String MyfavoriteDelete =
+      '$baseUrl/Favorite/deletemyfavorite.php';
 }
